@@ -180,10 +180,11 @@ public class Util {
 
 		CoinBR.close();
 		CoinFR.close();
-		if (content[2].equals("1")) {
+		return content[2].equals("1");
+		/*if (content[2].equals("1")) {
 			return true;
 		} else
-			return false;
+			return false;*/
 
 	}
 
