@@ -5,6 +5,12 @@ import java.awt.event.ComponentListener;
 
 import javax.swing.JFrame;
 
+/**
+ * Das ist die Hauptklasse, welche das Frame für das Programm beinhaltet
+ *
+ * @author jaypi4c
+ *
+ */
 public class Frame extends JFrame {
 
 	private static final long serialVersionUID = -8888683961737387330L;
