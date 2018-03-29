@@ -4,6 +4,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**
@@ -59,6 +60,8 @@ public class Frame extends JFrame {
 		});
 
 		this.setVisible(true);
+
+		this.setIconImage(new ImageIcon(getClass().getResource("/com/JayPi4c/resource/icon.jpg")).getImage());
 	}
 
 }
