@@ -1,7 +1,7 @@
 package com.JayPi4c.utils;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStreamReader;
 
 public class PreInit {
 	public static String[] content;
@@ -9,10 +9,14 @@ public class PreInit {
 	public static void begin() {
 
 		try {
-			FileReader PropFR = new FileReader("./src/com/JayPi4c/resource/properties.prop");
-			// FileReader PropFR = new FileReader("./properties.prop"); //Pfad
+
+			// FileReader PropFR = new
+			// FileReader("./src/com/JayPi4c/resource/properties.prop");
+			// FileReader PropFR = new FileReader("./properties.prop"); // Pfad
 			// zur prop Datei im selben Ordner wie die .jar Datei
-			BufferedReader PropBR = new BufferedReader(PropFR);
+			BufferedReader PropBR = new BufferedReader(
+					new InputStreamReader(PreInit.class.getResourceAsStream("/com/JayPi4c/resource/properties.prop")));
+			// BufferedReader PropBR = new BufferedReader(PropFR);
 
 			String[] lines = PropBR.readLine().split("//");
 
@@ -63,7 +67,7 @@ public class PreInit {
 			}
 
 			PropBR.close();
-			PropFR.close();
+			// PropFR.close();
 			System.out.println("load 'properties.prop': Successfully");
 
 		} catch (Exception ex) {
