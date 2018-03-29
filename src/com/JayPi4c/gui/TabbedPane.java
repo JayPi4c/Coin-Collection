@@ -1,6 +1,10 @@
 package com.JayPi4c.gui;
 
+import java.io.IOException;
+
 import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class TabbedPane extends JTabbedPane {
 
@@ -8,12 +12,25 @@ public class TabbedPane extends JTabbedPane {
 	private MainPanel mp;
 	private FeaturePanel fp;
 
-	public TabbedPane() {
+	public TabbedPane() throws IOException {
 		super(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
 		mp = new MainPanel();
 		this.addTab("Main", mp);
 		fp = new FeaturePanel();
 		this.addTab("Features", fp);
+		this.addChangeListener(new ChangeListener() {
+
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				if (getSelectedIndex() == 1) {
+					try {
+						fp.refresh();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
 	}
 
 	@Override

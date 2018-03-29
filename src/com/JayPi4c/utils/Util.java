@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 public class Util {
 
 	public static final String n = System.getProperty("line.separator");
@@ -181,10 +183,9 @@ public class Util {
 		CoinBR.close();
 		CoinFR.close();
 		return content[2].equals("1");
-		/*if (content[2].equals("1")) {
-			return true;
-		} else
-			return false;*/
+		/*
+		 * if (content[2].equals("1")) { return true; } else return false;
+		 */
 
 	}
 
@@ -348,4 +349,47 @@ public class Util {
 
 		return members;
 	}
+
+	public static float getWorth() throws IOException {
+		float worth = 0;
+		for (int year = 1999; year < 2017; year++) {
+			File file = new File(getPath(year));
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			for (int i = 0; i < getMembersFromYear(year); i++) {
+				String line = bufferedReader.readLine();
+				String[] parts = line.split(";");
+				for (int j = 0; j < parts.length; j++) {
+					String[] part = parts[j].split(",");
+					if (part[2].equals("1"))
+						worth += Float.parseFloat(part[1]);
+				}
+
+			}
+			bufferedReader.close();
+		}
+		return worth;
+	}
+
+	public static void resetCollection() throws IOException {
+
+		File f = new File(getExecutionPath() + "/data");
+		System.out.println(f.getAbsolutePath());
+
+		for (String s : f.list())
+			new File(f.getPath(), s).delete();
+
+		if (f.exists())
+			Init.begin();
+
+		Object[] options = { "OK" };
+		// JOptionPane.showOptionDialog(null, texts.getString("resetDialogOutput"),
+		// texts.getString("resetDialogButton"),
+		// JOptionPane.PLAIN_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options,
+		// options[0]);
+
+		JOptionPane.showOptionDialog(null, "Feddig", "Feddifg", JOptionPane.PLAIN_MESSAGE, JOptionPane.QUESTION_MESSAGE,
+				null, options, options[0]);
+	}
+
 }

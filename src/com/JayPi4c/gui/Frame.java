@@ -2,6 +2,7 @@ package com.JayPi4c.gui;
 
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 
@@ -20,7 +21,7 @@ public class Frame extends JFrame {
 
 	private TabbedPane tb;
 
-	public Frame(String title) {
+	public Frame(String title) throws IOException {
 		super(title);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(true);
