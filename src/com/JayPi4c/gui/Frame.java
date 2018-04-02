@@ -13,6 +13,7 @@ import javax.swing.JFrame;
  * @author jaypi4c
  *
  */
+
 public class Frame extends JFrame {
 
 	private static final long serialVersionUID = -8888683961737387330L;

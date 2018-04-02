@@ -11,6 +11,7 @@ public class TabbedPane extends JTabbedPane {
 	private static final long serialVersionUID = 7270368939760559248L;
 	private MainPanel mp;
 	private FeaturePanel fp;
+	private TablePanel tp;
 
 	public TabbedPane() throws IOException {
 		super(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -18,6 +19,9 @@ public class TabbedPane extends JTabbedPane {
 		this.addTab("Main", mp);
 		fp = new FeaturePanel();
 		this.addTab("Features", fp);
+		tp = new TablePanel();
+		this.addTab("Tables", tp);
+
 		this.addChangeListener(new ChangeListener() {
 
 			@Override
