@@ -23,6 +23,8 @@ public class Table extends JTable {
 		super(rowData, columnNames);
 		this.year = year;
 
+		// https://www.tutorials.de/threads/jtable-zelle-gezielt-einfaerben.195978/
+		// Quelle des Codes für das ändern des Hintergrundes einer Zelle
 		this.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
 
 			private static final long serialVersionUID = 1L;
