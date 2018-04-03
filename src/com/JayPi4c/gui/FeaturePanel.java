@@ -60,7 +60,7 @@ public class FeaturePanel extends JPanel {
 	}
 
 	public void relocate(int width, int height) {
-		reset.setLocation(width - 120, height - 60);
+		reset.setLocation(width - 120, height - 80);
 	}
 
 	public void refresh() throws IOException {
