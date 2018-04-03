@@ -60,9 +60,11 @@ public class Frame extends JFrame {
 			}
 		});
 
+		this.setIconImage(new ImageIcon(getClass().getResource("/com/JayPi4c/resource/icon.jpg")).getImage());
 		this.setVisible(true);
 
-		this.setIconImage(new ImageIcon(getClass().getResource("/com/JayPi4c/resource/icon.jpg")).getImage());
+		this.pack();
+
 	}
 
 }
