@@ -3,20 +3,33 @@ package com.JayPi4c.utils;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+/**
+ * 
+ * @author JayPi4c
+ * @version 1.0.0
+ *
+ */
 public class PreInit {
-	public static String[] content;
 
+	private static String[] content;
+
+	/**
+	 * Die statische Funktion begin() lädt alle Informationen aus der
+	 * properties.prop Datei in statische Variablen in der
+	 * {@link com.JayPi4c.utils.Attributes Attributes} Klasse. Aus dieser Attributes
+	 * Klasse sind alle Variablen global erreichbar.
+	 * <p>
+	 * Ist das Laden abgeschlossen, so wird in der Konsole ausgegeben, dass das
+	 * Laden erfolgreich war. Gibt es einen Fehler beim Laden der Datei so wird das
+	 * Programm beendet, da ohnehin weitere Informationen für das Programm fehlen.
+	 * 
+	 * @since 1.0.0
+	 */
 	public static void begin() {
 
 		try {
-
-			// FileReader PropFR = new
-			// FileReader("./src/com/JayPi4c/resource/properties.prop");
-			// FileReader PropFR = new FileReader("./properties.prop"); // Pfad
-			// zur prop Datei im selben Ordner wie die .jar Datei
 			BufferedReader PropBR = new BufferedReader(
 					new InputStreamReader(PreInit.class.getResourceAsStream("/com/JayPi4c/resource/properties.prop")));
-			// BufferedReader PropBR = new BufferedReader(PropFR);
 
 			String[] lines = PropBR.readLine().split("//");
 

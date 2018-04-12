@@ -5,7 +5,44 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * 
+ * @author JayPi4c
+ * @version 1.0.0
+ */
 public class Init {
+	/**
+	 * Die statische Funktion begin() überprüft zu Beginn, ob der "data" Ordner
+	 * existiert. Darauf folgend werden alle "Coinages.co" Dateien auf vorhanden
+	 * sein überprüft. Ist eine Datei nicht vorhanden, wird diese generiert. Sollte
+	 * die Datei vorhanden sein, wird die Datei auf Fehler überprüft, die das
+	 * Programm evtl. zum Absturz bringen kann. Verschiedene Fehler sorgen für
+	 * verschiedene Fehlermeldungen:
+	 * <p>
+	 * <li>Ist die Datei leer, dann wird der Fehlercode 0 ausgegeben
+	 * <li>Enthält eine Zeile nicht 8 Elemente, so wird der Fehlercode 1 ausgegeben.
+	 * Die 8 Elemente stehen für 8 Münzen pro Jahr (1ct, 2ct, 5ct, 10ct, 20ct, 50ct,
+	 * 1€, 2€). Des Weiteren beinhaltet ein Element noch eine Zahl für das Land, den
+	 * CountryKey, und eine Zahl, die wiederspiegelt, ob das Element im Besitz des
+	 * Users ist.
+	 * <li>Besteht ein Element nicht aus 3 Teilen, so wir der Fehlercode 2
+	 * ausgegeben.
+	 * <li>Entspricht der CountryKey nicht der Zeile in der Datei, so wird der
+	 * Fehlercode 3 ausgegeben.
+	 * <p>
+	 * Sollte ein Fehler erkannt werden, so wird die Datei als Fehlerhaft markiert
+	 * und die Datei wird neu generiert, jedoch wird versucht, so viele
+	 * Informationen zu retten, wie es nur möglich ist. Dies geschieht durch die
+	 * {@link com.JayPi4c.utils.Util#rescueData(File file, int year) rescueData}
+	 * Methode aus der Util-Klasse.
+	 * <p>
+	 * Gibt es keine Fehler oder die Daten wurde gerettet, so wird abschließend die
+	 * Information ausgegeben, dass die Datei erreichbar ist.
+	 * 
+	 * 
+	 * @throws IOException
+	 * @since 1.0.0
+	 */
 	public static void begin() throws IOException {
 		File dataDir = new File(Util.getExecutionPath() + "/data");
 		if (!dataDir.exists())

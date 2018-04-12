@@ -9,10 +9,26 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
+/**
+ * 
+ * @author JayPi4c
+ * @version 1.0.0
+ */
 public class Util {
-
+	/**
+	 * Mit der Variablen n wird immer eine neue Zeile angefangen, unabhängig des
+	 * OSs.
+	 * 
+	 * @since 1.0.0
+	 */
 	public static final String n = System.getProperty("line.separator");
 
+	/**
+	 * 
+	 * @return Gibt den absoluten Pfad an, der zu der .jar Datei führt, um zum
+	 *         Beispiel den "/data" Ordner finden bzw generieren lassen zu können.
+	 * @since 1.0.0
+	 */
 	public static String getExecutionPath() {
 		String absolutePath = new File(".").getAbsolutePath();
 		File file = new File(absolutePath);
@@ -20,22 +36,41 @@ public class Util {
 		return absolutePath;
 	}
 
+	/**
+	 * Es wird der Pfad zur CoinagesYEAR.co Datei ermittelt und zurückgegeben, der
+	 * zu dem Parameter passt.
+	 * 
+	 * @param year
+	 *            Das Jahr, welches zur gesuchten Datei gehört.
+	 * @return Der Pfad zur CoinagesYEAR.co Datei.
+	 * @since 1.0.0
+	 */
 	public static String getPath(int year) {
 		String path = getExecutionPath() + "/data/coinages" + year + ".co";
 		return path;
 	}
 
+	/**
+	 * Diese Funktion erstellt die Datei, die zu dem Parameterjahr gehört und füllt
+	 * diese mit den zugehörigen Elementen. Diese werden auch daran angepasst, dass
+	 * es verschiedene Anzahlen an Ländern zu untschiedlichen Jahren im € gab. Diese
+	 * unterschiedliche Anzahl an Ländern in unterschiedlichen Jahren wird schon in
+	 * der Funktion berücksichtigt.
+	 * 
+	 * @param year
+	 *            Das Jahr, für welches die CoinagesYEAR.co Datei generiert werden
+	 *            soll.
+	 * @throws IOException
+	 * @since 1.0.0
+	 */
 	public static void genRegistry(int year) throws IOException {
 		File file = new File(getExecutionPath() + "/data/coinages" + year + ".co");
 		file.createNewFile();
 
 		BufferedWriter CoinBW = new BufferedWriter(new FileWriter(file));
 
-		for (int i = 0; i < getMembersFromYear(year); i++) { // looped durch
-																// jedes Land,
-																// das in dem
-																// Jahr den Euro
-																// hatte
+		// looped durch jedes Land, das in dem Jahr den Euro hatte
+		for (int i = 0; i < getMembersFromYear(year); i++) {
 			System.out.println("write in line " + (i + 1));
 			for (int j = 0; j < 2; j++) {
 				int k = (int) Math.pow(10, j);
@@ -52,37 +87,29 @@ public class Util {
 	}
 
 	/**
-	 * If a datafile is damaged try to rescue the data
+	 * Wenn eine Datei beschädigt ist, was durch die
+	 * Init.{@link com.JayPi4c.utils.Init#begin() begin()}-Methode festgestellt
+	 * werden kann, wird mit dieser Methode versucht, so viele Informationen, wie
+	 * möglich zu retten.
+	 * <p>
+	 * Hierfür werden die verbleibenden Informationen in einem Stringarray
+	 * gespeichert und eine neue Datei generiert, welche mit den gesicherten
+	 * Informationen gefüllt wird, sodass die gesicherten Informationen automatisch
+	 * wieder in die Datei eingepflegt werden können.
 	 * 
 	 * @param file
+	 *            Die Datei, die überprüft und repariert werden soll.
 	 * @param year
+	 *            Das Jahr der Datei, für die Anzahl der Länder in dem Jahr und
+	 *            weiteres.
 	 * @throws IOException
+	 * @since 1.0.0
 	 */
 	public static void rescueData(File file, int year) throws IOException {
-
-		String[] fullDataInParts = new String[getMembersFromYear(year) * 8]; // erstelle
-																				// einen
-																				// String,
-																				// der
-																				// alle
-																				// Daten
-																				// speichert,
-																				// aufgeteilt
-																				// in
-																				// die
-																				// Parts
-																				// jeder
-																				// Zeile
-																				// jede
-																				// Zeile(getMembersFromYear)
-																				// mal
-																				// die
-																				// Anzahl
-																				// Parts,
-																				// die
-																				// jede
-																				// Zeile
-																				// hat(8)
+		// erstelle einen String, der alle Daten speichert, aufgeteilt in die Parts
+		// jeder Zeile jede Zeile(getMembersFromYear) mal die Anzahl Parts, die jede
+		// Zeile hat(8)
+		String[] fullDataInParts = new String[getMembersFromYear(year) * 8];
 		// System.out.println("IndexSize: "+ fullDataInParts.length);
 		for (int i = 0; i < fullDataInParts.length; i++)
 			fullDataInParts[i] = null;
@@ -159,6 +186,20 @@ public class Util {
 		 */
 	}
 
+	/**
+	 * Die Funktion gibt den Status einer Münze zurück
+	 * 
+	 * @param land
+	 *            Das Land, aus dem die Münze stammt.
+	 * @param value
+	 *            Der Wert der Münze (1ct, 2ct, 5ct, 10ct, 20ct, 50ct, 1€, 2€)
+	 * @param year
+	 *            Das Jahr, aus dem die Münze stammt.
+	 * @return true, wenn die Münze im Besitz ist, false, wenn die Münze nicht im
+	 *         Besitz ist.
+	 * @throws IOException
+	 * @since 1.0.0
+	 */
 	public static boolean getStatus(String land, double value, int year) throws IOException {
 		String content[];
 		int multiplicator = getLineMultiplicator(value);
@@ -183,12 +224,18 @@ public class Util {
 		CoinBR.close();
 		CoinFR.close();
 		return content[2].equals("1");
-		/*
-		 * if (content[2].equals("1")) { return true; } else return false;
-		 */
-
 	}
 
+	/**
+	 * Der Key, der zu einem Land gehört, die Zeile des Landes
+	 * 
+	 * @param year
+	 *            Das Jahr, für das man den key haben will
+	 * @param land
+	 *            Das Land, für das man den Key haben will
+	 * @return gibt den key des Landes zurück.
+	 * @since 1.0.0
+	 */
 	public static int countryKey(int year, String land) {
 		int key = 42;
 		String countryNames[] = Attributes.getCountryNames();
