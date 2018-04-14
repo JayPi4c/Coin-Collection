@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.JayPi4c.gui.Frame;
 import com.JayPi4c.utils.Init;
 import com.JayPi4c.utils.PreInit;
+import com.JayPi4c.utils.Util;
 
 /**
  * 
@@ -13,6 +14,7 @@ import com.JayPi4c.utils.PreInit;
  *
  */
 public class Main {
+
 	/**
 	 * Die main-Methode wird bei jedem Programmstart ausgef&uumlhrt. Es wird die
 	 * PreInit-Klasse, sowie die Init Klasse ausgef&uumlhrt, um die wichtigsten
@@ -30,8 +32,10 @@ public class Main {
 	 * @since 1.0.0
 	 */
 	public static void main(String args[]) throws IOException {
+		Util.initializeLogger();
 		PreInit.begin();
 		Init.begin();
+		Util.log.info("Init Done");
 		new Frame("CoinCollectionRefactored");
 	}
 }
