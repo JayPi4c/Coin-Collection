@@ -2,6 +2,7 @@
 /bin1/
 /data/
 /log.txt
+/log.txt.lck
 
 # Eclipse
 .classpath

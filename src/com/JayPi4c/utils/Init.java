@@ -50,16 +50,20 @@ public class Init {
 
 		for (int i = 1999; i <= 2017; i++) {
 			File CoinRegistry = new File(Util.getPath(i));
-			System.out.println("Coinregistry" + i + " exists: " + CoinRegistry.exists());
+			// System.out.println("Coinregistry" + i + " exists: " + CoinRegistry.exists());
+			// Util.log.info("Coinregistry" + i + " exists: " + CoinRegistry.exists());
 			if (!CoinRegistry.exists()) {
-				System.out.println("generate: " + CoinRegistry.getAbsolutePath());
+				// System.out.println("generate: " + CoinRegistry.getAbsolutePath());
+				Util.log.info("generate: " + CoinRegistry.getAbsolutePath());
 				Util.genRegistry(i);
 			} else {
 				boolean damaged = false;
 
 				if (CoinRegistry.length() == 0) {
-					System.out.println("file is damaged!");
-					System.out.println("Errocode: 0; File is empty");
+					// System.out.println("file is damaged!");
+					// System.out.println("Errocode: 0; File is empty");
+					Util.log.info("file is damaged!");
+					Util.log.info("Errocode: 0; File is empty");
 					damaged = true;
 					Util.genRegistry(i);
 				}
@@ -71,8 +75,10 @@ public class Init {
 
 						String[] str = lines[j].split(";");
 						if (str.length != 8) {
-							System.out.println("file is damaged!");
-							System.out.println("Errorcode: 1; Line: " + j);
+							// System.out.println("file is damaged!");
+							// System.out.println("Errorcode: 1; Line: " + j);
+							Util.log.info("file is damaged!");
+							Util.log.info("Errorcode: 1; Line: " + j);
 							damaged = true;
 							break;
 						}
@@ -81,14 +87,18 @@ public class Init {
 							for (int k = 0; k < str.length; k++) {
 								String[] part = str[k].split(",");
 								if (part.length != 3) {
-									System.out.println("file is damaged!");
-									System.out.println("Errorcode: 2; Line: " + (j + 1));
+									// System.out.println("file is damaged!");
+									// System.out.println("Errorcode: 2; Line: " + (j + 1));
+									Util.log.info("file is damaged!");
+									Util.log.info("Errorcode: 2; Line: " + (j + 1));
 									damaged = true;
 									break;
 								}
 								if (!part[0].equals("" + j)) {
-									System.out.println("file is damaged!");
-									System.out.println("Errorcode: 3; Line: " + (j + 1));
+									// System.out.println("file is damaged!");
+									// System.out.println("Errorcode: 3; Line: " + (j + 1));
+									Util.log.info("file is damaged!");
+									Util.log.info("Errorcode: 3; Line: " + (j + 1));
 									damaged = true;
 									break;
 								}
@@ -103,7 +113,8 @@ public class Init {
 						Util.rescueData(CoinRegistry, i);
 				}
 			}
-			System.out.println("'coinages" + i + ".co' is accessible");
+			// System.out.println("'coinages" + i + ".co' is accessible");
+			// Util.log.info("'coinages" + i + ".co' is accessible");
 		}
 	}
 

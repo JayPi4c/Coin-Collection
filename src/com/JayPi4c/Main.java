@@ -35,7 +35,7 @@ public class Main {
 		Util.initializeLogger();
 		PreInit.begin();
 		Init.begin();
-		Util.log.info("Init Done");
+		Util.log.info("Initialization successfully!");
 		new Frame("CoinCollectionRefactored");
 	}
 }
