@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
@@ -16,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Util {
 	/**
-	 * Mit der Variablen n wird immer eine neue Zeile angefangen, unabhängig des
+	 * Mit der Variablen n wird immer eine neue Zeile angefangen, unabhï¿½ngig des
 	 * OSs.
 	 * 
 	 * @since 1.0.0
@@ -25,8 +26,8 @@ public class Util {
 
 	/**
 	 * 
-	 * @return Gibt den absoluten Pfad an, der zu der .jar Datei führt, um zum
-	 *         Beispiel den "/data" Ordner finden bzw generieren lassen zu können.
+	 * @return Gibt den absoluten Pfad an, der zu der .jar Datei fï¿½hrt, um zum
+	 *         Beispiel den "/data" Ordner finden bzw generieren lassen zu kï¿½nnen.
 	 * @since 1.0.0
 	 */
 	public static String getExecutionPath() {
@@ -37,11 +38,11 @@ public class Util {
 	}
 
 	/**
-	 * Es wird der Pfad zur CoinagesYEAR.co Datei ermittelt und zurückgegeben, der
+	 * Es wird der Pfad zur CoinagesYEAR.co Datei ermittelt und zurï¿½ckgegeben, der
 	 * zu dem Parameter passt.
 	 * 
 	 * @param year
-	 *            Das Jahr, welches zur gesuchten Datei gehört.
+	 *            Das Jahr, welches zur gesuchten Datei gehï¿½rt.
 	 * @return Der Pfad zur CoinagesYEAR.co Datei.
 	 * @since 1.0.0
 	 */
@@ -51,14 +52,14 @@ public class Util {
 	}
 
 	/**
-	 * Diese Funktion erstellt die Datei, die zu dem Parameterjahr gehört und füllt
-	 * diese mit den zugehörigen Elementen. Diese werden auch daran angepasst, dass
-	 * es verschiedene Anzahlen an Ländern zu untschiedlichen Jahren im € gab. Diese
-	 * unterschiedliche Anzahl an Ländern in unterschiedlichen Jahren wird schon in
-	 * der Funktion berücksichtigt.
+	 * Diese Funktion erstellt die Datei, die zu dem Parameterjahr gehï¿½rt und fï¿½llt
+	 * diese mit den zugehï¿½rigen Elementen. Diese werden auch daran angepasst, dass
+	 * es verschiedene Anzahlen an Lï¿½ndern zu untschiedlichen Jahren im ï¿½ gab. Diese
+	 * unterschiedliche Anzahl an Lï¿½ndern in unterschiedlichen Jahren wird schon in
+	 * der Funktion berï¿½cksichtigt.
 	 * 
 	 * @param year
-	 *            Das Jahr, für welches die CoinagesYEAR.co Datei generiert werden
+	 *            Das Jahr, fï¿½r welches die CoinagesYEAR.co Datei generiert werden
 	 *            soll.
 	 * @throws IOException
 	 * @since 1.0.0
@@ -87,20 +88,20 @@ public class Util {
 	}
 
 	/**
-	 * Wenn eine Datei beschädigt ist, was durch die
+	 * Wenn eine Datei beschï¿½digt ist, was durch die
 	 * Init.{@link com.JayPi4c.utils.Init#begin() begin()}-Methode festgestellt
 	 * werden kann, wird mit dieser Methode versucht, so viele Informationen, wie
-	 * möglich zu retten.
+	 * mï¿½glich zu retten.
 	 * <p>
-	 * Hierfür werden die verbleibenden Informationen in einem Stringarray
+	 * Hierfï¿½r werden die verbleibenden Informationen in einem Stringarray
 	 * gespeichert und eine neue Datei generiert, welche mit den gesicherten
-	 * Informationen gefüllt wird, sodass die gesicherten Informationen automatisch
-	 * wieder in die Datei eingepflegt werden können.
+	 * Informationen gefï¿½llt wird, sodass die gesicherten Informationen automatisch
+	 * wieder in die Datei eingepflegt werden kï¿½nnen.
 	 * 
 	 * @param file
-	 *            Die Datei, die überprüft und repariert werden soll.
+	 *            Die Datei, die ï¿½berprï¿½ft und repariert werden soll.
 	 * @param year
-	 *            Das Jahr der Datei, für die Anzahl der Länder in dem Jahr und
+	 *            Das Jahr der Datei, fï¿½r die Anzahl der Lï¿½nder in dem Jahr und
 	 *            weiteres.
 	 * @throws IOException
 	 * @since 1.0.0
@@ -187,15 +188,15 @@ public class Util {
 	}
 
 	/**
-	 * Die Funktion gibt den Status einer Münze zurück
+	 * Die Funktion gibt den Status einer Mï¿½nze zurï¿½ck
 	 * 
 	 * @param land
-	 *            Das Land, aus dem die Münze stammt.
+	 *            Das Land, aus dem die Mï¿½nze stammt.
 	 * @param value
-	 *            Der Wert der Münze (1ct, 2ct, 5ct, 10ct, 20ct, 50ct, 1€, 2€)
+	 *            Der Wert der Mï¿½nze (1ct, 2ct, 5ct, 10ct, 20ct, 50ct, 1ï¿½, 2ï¿½)
 	 * @param year
-	 *            Das Jahr, aus dem die Münze stammt.
-	 * @return true, wenn die Münze im Besitz ist, false, wenn die Münze nicht im
+	 *            Das Jahr, aus dem die Mï¿½nze stammt.
+	 * @return true, wenn die Mï¿½nze im Besitz ist, false, wenn die Mï¿½nze nicht im
 	 *         Besitz ist.
 	 * @throws IOException
 	 * @since 1.0.0
@@ -227,13 +228,13 @@ public class Util {
 	}
 
 	/**
-	 * Der Key, der zu einem Land gehört, die Zeile des Landes
+	 * Der Key, der zu einem Land gehï¿½rt, die Zeile des Landes
 	 * 
 	 * @param year
-	 *            Das Jahr, für das man den key haben will
+	 *            Das Jahr, fï¿½r das man den key haben will
 	 * @param land
-	 *            Das Land, für das man den Key haben will
-	 * @return gibt den key des Landes zurück.
+	 *            Das Land, fï¿½r das man den Key haben will
+	 * @return gibt den key des Landes zurï¿½ck.
 	 * @since 1.0.0
 	 */
 	public static int countryKey(int year, String land) {
@@ -246,6 +247,17 @@ public class Util {
 			}
 		}
 		return key;
+	}
+
+	/**
+	 * Gibt den Namen, der zu dem countryKey gehÃ¶rt, zurÃ¼ck.
+	 * 
+	 * @param countryKey
+	 *            Der countryKey, von dem man den String des Namens haben mÃ¶chte.
+	 * @return Der String des Namens, der zu dem countryKey gehÃ¶rt.
+	 */
+	public static String getNameByCountryKey(int countryKey) {
+		return Attributes.getCounryName(countryKey);
 	}
 
 	public static void updateRegistry(String land, double value, int year, boolean holding) throws IOException {
@@ -415,7 +427,8 @@ public class Util {
 			}
 			bufferedReader.close();
 		}
-		return worth;
+		DecimalFormat df = new DecimalFormat("#.00");
+		return Float.parseFloat(df.format(worth).replace(',', '.'));
 	}
 
 	public static void resetCollection() throws IOException {
