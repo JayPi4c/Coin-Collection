@@ -81,12 +81,16 @@ public class PreInit {
 
 			PropBR.close();
 			// PropFR.close();
-			System.out.println("load 'properties.prop': Successfully");
+			// System.out.println("load 'properties.prop': Successfully");
+			Util.log.info("load 'properties.prop': Successfully");
 
 		} catch (Exception ex) {
-			System.out.println("load 'properties.prop': failed");
-			System.out.println("Error log: " + ex);
-			System.out.println("Exiting ...");
+			// System.out.println("load 'properties.prop': failed");
+			// System.out.println("Error log: " + ex);
+			// System.out.println("Exiting ...");
+			Util.log.info("load 'properties.prop': failed");
+			Util.log.info("Error log: " + ex);
+			Util.log.info("Exiting...");
 			System.exit(0);
 		}
 	}
