@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -44,16 +45,30 @@ public class Table extends JTable {
 			}
 		});
 
+		// https://stackoverflow.com/questions/7350893/click-event-on-jtable-java
 		this.addMouseListener(new MouseListener() {
 
 			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-
+			public void mouseClicked(MouseEvent evt) {
+				int row = rowAtPoint(evt.getPoint());
+				int col = columnAtPoint(evt.getPoint());
+				if (col >= 0 && row >= 0) {
+					double value = getValue((String) getValueAt(row, col));
+					String land = Util.getNameByCountryKey(col);
+					boolean holding = false;
+					try {
+						holding = Util.getStatus(land, value, year);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					System.out.println("The coin is " + (holding ? "" : "not ") + "in your possesion!");
+					JOptionPane.showMessageDialog(null,
+							"Die Münze ist " + (holding ? "" : "nicht ") + "in deinem Besitz!");
+				}
 			}
 
 			@Override
-			public void mousePressed(MouseEvent arg0) {
+			public void mouseEntered(MouseEvent arg0) {
 				// TODO Auto-generated method stub
 
 			}
@@ -65,18 +80,15 @@ public class Table extends JTable {
 			}
 
 			@Override
-			public void mouseEntered(MouseEvent arg0) {
+			public void mousePressed(MouseEvent arg0) {
 				// TODO Auto-generated method stub
 
 			}
 
 			@Override
-			public void mouseClicked(MouseEvent evt) {
-				int row = rowAtPoint(evt.getPoint());
-				int col = columnAtPoint(evt.getPoint());
-				if (col >= 0 && row >= 0) {
-					System.out.print(getValueAt(row, col));
-				}
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
 			}
 		});
 	}
@@ -94,6 +106,30 @@ public class Table extends JTable {
 		String[] part = parts[row].split(",");
 		bufferedReader.close();
 		return (part[2].equals("1") ? Color.GREEN : Color.RED);
+
+	}
+
+	private double getValue(String s) {
+		switch (s) {
+		case "1ct":
+			return 0.01;
+		case "2ct":
+			return 0.02;
+		case "5ct":
+			return 0.05;
+		case "10ct":
+			return 0.10;
+		case "20ct":
+			return 0.20;
+		case "50ct":
+			return 0.50;
+		case "1€":
+			return 1;
+		case "2€":
+			return 2;
+		default:
+			return 42;
+		}
 
 	}
 }
