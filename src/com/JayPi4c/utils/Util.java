@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
@@ -426,7 +427,8 @@ public class Util {
 			}
 			bufferedReader.close();
 		}
-		return worth;
+		DecimalFormat df = new DecimalFormat("#.00");
+		return Float.parseFloat(df.format(worth).replace(',', '.'));
 	}
 
 	public static void resetCollection() throws IOException {

@@ -53,7 +53,8 @@ public class Table extends JTable {
 				int row = rowAtPoint(evt.getPoint());
 				int col = columnAtPoint(evt.getPoint());
 				if (col >= 0 && row >= 0) {
-					double value = getValue((String) getValueAt(row, col));
+					String val = (String) getValueAt(row, col);
+					double value = getValue(val);
 					String land = Util.getNameByCountryKey(col);
 					boolean holding = false;
 					try {
@@ -62,8 +63,24 @@ public class Table extends JTable {
 						e.printStackTrace();
 					}
 					System.out.println("The coin is " + (holding ? "" : "not ") + "in your possesion!");
-					JOptionPane.showMessageDialog(null,
-							"Die Münze ist " + (holding ? "" : "nicht ") + "in deinem Besitz!");
+					// JOptionPane.showMessageDialog(null,
+					// "Die Münze ist " + (holding ? "" : "nicht ") + "in deinem Besitz!");
+
+					int dialogButton = JOptionPane.showConfirmDialog(null,
+							"Die Münze befindet sich " + (holding ? "" : "nicht ") + "in Ihrem Besitz!" + Util.n
+									+ "Soll die Münze " + (holding ? "entfernt " : "hinzugefügt ") + "werden?" + Util.n
+									+ "Land: " + land + "; Wert: " + val + "; Jahr: " + year,
+							"Münze " + (holding ? "entfernen" : "hinzufügen") + "?", JOptionPane.YES_NO_OPTION);
+					if (dialogButton == JOptionPane.YES_OPTION) {
+						try {
+							Util.updateRegistry(land, value, year, !holding);
+							JOptionPane.showMessageDialog(null, "Erfolgreich!");
+
+							// "Die Münze ist " + (holding ? "" : "nicht ") + "in deinem Besitz!");
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
 				}
 			}
 
