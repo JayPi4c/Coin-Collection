@@ -1,5 +1,7 @@
 /bin/
+/bin1/
 /data/
+/log.txt
 
 # Eclipse
 .classpath
@@ -17,4 +19,3 @@
 # Maven
 log/
 target/
-/bin1/

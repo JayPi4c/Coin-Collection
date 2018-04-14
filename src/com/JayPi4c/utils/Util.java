@@ -7,13 +7,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
 /**
  * 
  * @author JayPi4c
- * @version 1.0.0
+ * @version 1.1.0
  */
 public class Util {
 	/**
@@ -23,6 +25,27 @@ public class Util {
 	 * @since 1.0.0
 	 */
 	public static final String n = System.getProperty("line.separator");
+
+	/**
+	 * Ein Logger, mit dem schneller Errors gespeichert werden können.
+	 * 
+	 * @since 1.1.0
+	 */
+	public static final Logger log = Logger.getLogger(Util.class.getName());
+
+	/**
+	 * Um auch nach dem Programmstart Informationen und Fehler erkennen zu
+	 * k&oumlnnen werden diese Informationen auch in einer log.txt gespeichert.
+	 * Dieser wird in dieser Funktion initialisert.
+	 * 
+	 * @throws IOException
+	 * @since 1.1.0
+	 */
+	public static void initializeLogger() throws IOException {
+		log.info("Starting up...");
+		FileHandler handler = new FileHandler("log.txt");
+		log.addHandler(handler);
+	}
 
 	/**
 	 * 
