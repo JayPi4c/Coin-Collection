@@ -2,6 +2,8 @@ package com.JayPi4c.gui;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -39,6 +41,42 @@ public class Table extends JTable {
 					e.printStackTrace();
 				}
 				return this;
+			}
+		});
+
+		this.addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent evt) {
+				int row = rowAtPoint(evt.getPoint());
+				int col = columnAtPoint(evt.getPoint());
+				if (col >= 0 && row >= 0) {
+					System.out.print(getValueAt(row, col));
+				}
 			}
 		});
 	}
