@@ -14,7 +14,7 @@ public class PreInit {
 	private static String[] content;
 
 	/**
-	 * Die statische Funktion begin() lädt alle Informationen aus der
+	 * Die statische Funktion begin() l&aumldt alle Informationen aus der
 	 * properties.prop Datei in statische Variablen in der
 	 * {@link com.JayPi4c.utils.Attributes Attributes} Klasse. Aus dieser Attributes
 	 * Klasse sind alle Variablen global erreichbar.

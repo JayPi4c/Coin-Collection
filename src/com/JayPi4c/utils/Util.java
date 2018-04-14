@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Util {
 	/**
-	 * Mit der Variablen n wird immer eine neue Zeile angefangen, unabh�ngig des
+	 * Mit der Variablen n wird immer eine neue Zeile angefangen, unabh&aumlngig des
 	 * OSs.
 	 * 
 	 * @since 1.0.0
@@ -26,8 +26,9 @@ public class Util {
 
 	/**
 	 * 
-	 * @return Gibt den absoluten Pfad an, der zu der .jar Datei f�hrt, um zum
-	 *         Beispiel den "/data" Ordner finden bzw generieren lassen zu k�nnen.
+	 * @return Gibt den absoluten Pfad an, der zu der .jar Datei f&uumlhrt, um zum
+	 *         Beispiel den "/data" Ordner finden bzw generieren lassen zu
+	 *         k&oumlnnen.
 	 * @since 1.0.0
 	 */
 	public static String getExecutionPath() {
@@ -38,11 +39,11 @@ public class Util {
 	}
 
 	/**
-	 * Es wird der Pfad zur CoinagesYEAR.co Datei ermittelt und zur�ckgegeben, der
-	 * zu dem Parameter passt.
+	 * Es wird der Pfad zur CoinagesYEAR.co Datei ermittelt und zur&uumlckgegeben,
+	 * der zu dem Parameter passt.
 	 * 
 	 * @param year
-	 *            Das Jahr, welches zur gesuchten Datei geh�rt.
+	 *            Das Jahr, welches zur gesuchten Datei geh&oumlrt.
 	 * @return Der Pfad zur CoinagesYEAR.co Datei.
 	 * @since 1.0.0
 	 */
@@ -52,15 +53,15 @@ public class Util {
 	}
 
 	/**
-	 * Diese Funktion erstellt die Datei, die zu dem Parameterjahr geh�rt und f�llt
-	 * diese mit den zugeh�rigen Elementen. Diese werden auch daran angepasst, dass
-	 * es verschiedene Anzahlen an L�ndern zu untschiedlichen Jahren im � gab. Diese
-	 * unterschiedliche Anzahl an L�ndern in unterschiedlichen Jahren wird schon in
-	 * der Funktion ber�cksichtigt.
+	 * Diese Funktion erstellt die Datei, die zu dem Parameterjahr geh&oumlrt und
+	 * f&uumlllt diese mit den zugeh&oumlrigen Elementen. Diese werden auch daran
+	 * angepasst, dass es verschiedene Anzahlen an L&aumlndern zu untschiedlichen
+	 * Jahren im &euro gab. Diese unterschiedliche Anzahl an L&aumlndern in
+	 * unterschiedlichen Jahren wird schon in der Funktion ber&uumlcksichtigt.
 	 * 
 	 * @param year
-	 *            Das Jahr, f�r welches die CoinagesYEAR.co Datei generiert werden
-	 *            soll.
+	 *            Das Jahr, f&uumlr welches die CoinagesYEAR.co Datei generiert
+	 *            werden soll.
 	 * @throws IOException
 	 * @since 1.0.0
 	 */
@@ -88,21 +89,21 @@ public class Util {
 	}
 
 	/**
-	 * Wenn eine Datei besch�digt ist, was durch die
+	 * Wenn eine Datei besch&aumldigt ist, was durch die
 	 * Init.{@link com.JayPi4c.utils.Init#begin() begin()}-Methode festgestellt
 	 * werden kann, wird mit dieser Methode versucht, so viele Informationen, wie
-	 * m�glich zu retten.
+	 * m&oumlglich zu retten.
 	 * <p>
-	 * Hierf�r werden die verbleibenden Informationen in einem Stringarray
+	 * Hierf&uumlr werden die verbleibenden Informationen in einem Stringarray
 	 * gespeichert und eine neue Datei generiert, welche mit den gesicherten
-	 * Informationen gef�llt wird, sodass die gesicherten Informationen automatisch
-	 * wieder in die Datei eingepflegt werden k�nnen.
+	 * Informationen gef&uumlllt wird, sodass die gesicherten Informationen
+	 * automatisch wieder in die Datei eingepflegt werden k&oumlnnen.
 	 * 
 	 * @param file
-	 *            Die Datei, die �berpr�ft und repariert werden soll.
+	 *            Die Datei, die &uumlberpr&uumlft und repariert werden soll.
 	 * @param year
-	 *            Das Jahr der Datei, f�r die Anzahl der L�nder in dem Jahr und
-	 *            weiteres.
+	 *            Das Jahr der Datei, f&uumlr die Anzahl der L&aumlnder in dem Jahr
+	 *            und weiteres.
 	 * @throws IOException
 	 * @since 1.0.0
 	 */
@@ -188,16 +189,17 @@ public class Util {
 	}
 
 	/**
-	 * Die Funktion gibt den Status einer M�nze zur�ck
+	 * Die Funktion gibt den Status einer M&uumlnze zur&uumlck
 	 * 
 	 * @param land
-	 *            Das Land, aus dem die M�nze stammt.
+	 *            Das Land, aus dem die M&uumlnze stammt.
 	 * @param value
-	 *            Der Wert der M�nze (1ct, 2ct, 5ct, 10ct, 20ct, 50ct, 1�, 2�)
+	 *            Der Wert der M&uumlnze (1ct, 2ct, 5ct, 10ct, 20ct, 50ct, 1&euro,
+	 *            2&euro)
 	 * @param year
-	 *            Das Jahr, aus dem die M�nze stammt.
-	 * @return true, wenn die M�nze im Besitz ist, false, wenn die M�nze nicht im
-	 *         Besitz ist.
+	 *            Das Jahr, aus dem die M&uumlnze stammt.
+	 * @return true, wenn die M&uumlnze im Besitz ist, false, wenn die M&uumlnze
+	 *         nicht im Besitz ist.
 	 * @throws IOException
 	 * @since 1.0.0
 	 */
@@ -228,13 +230,13 @@ public class Util {
 	}
 
 	/**
-	 * Der Key, der zu einem Land geh�rt, die Zeile des Landes
+	 * Der Key, der zu einem Land geh&oumlrt, die Zeile des Landes
 	 * 
 	 * @param year
-	 *            Das Jahr, f�r das man den key haben will
+	 *            Das Jahr, f&uumlr das man den key haben will
 	 * @param land
-	 *            Das Land, f�r das man den Key haben will
-	 * @return gibt den key des Landes zur�ck.
+	 *            Das Land, f&uumlr das man den Key haben will
+	 * @return gibt den key des Landes zur&uumlck.
 	 * @since 1.0.0
 	 */
 	public static int countryKey(int year, String land) {
@@ -250,11 +252,12 @@ public class Util {
 	}
 
 	/**
-	 * Gibt den Namen, der zu dem countryKey gehört, zurück.
+	 * Gibt den Namen, der zu dem countryKey geh&oumlt, zur&uumlck.
 	 * 
 	 * @param countryKey
-	 *            Der countryKey, von dem man den String des Namens haben möchte.
-	 * @return Der String des Namens, der zu dem countryKey gehört.
+	 *            Der countryKey, von dem man den String des Namens haben
+	 *            m&oumlchte.
+	 * @return Der String des Namens, der zu dem countryKey geh&oumlrt.
 	 */
 	public static String getNameByCountryKey(int countryKey) {
 		return Attributes.getCounryName(countryKey);
@@ -448,7 +451,7 @@ public class Util {
 		// JOptionPane.PLAIN_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options,
 		// options[0]);
 
-		JOptionPane.showOptionDialog(null, "Feddig", "Feddifg", JOptionPane.PLAIN_MESSAGE, JOptionPane.QUESTION_MESSAGE,
+		JOptionPane.showOptionDialog(null, "Feddig", "Feddig", JOptionPane.PLAIN_MESSAGE, JOptionPane.QUESTION_MESSAGE,
 				null, options, options[0]);
 	}
 

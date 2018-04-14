@@ -24,8 +24,8 @@ public class TableTabbedPane extends JTabbedPane {
 				rowData[3][j] = "10ct";
 				rowData[4][j] = "20ct";
 				rowData[5][j] = "50ct";
-				rowData[6][j] = "1€";
-				rowData[7][j] = "2€";
+				rowData[6][j] = "1\u20AC";
+				rowData[7][j] = "2\u20AC";
 			}
 			this.add("" + year, new JScrollPane(new Table(rowData, columnNames, year)));
 		}
