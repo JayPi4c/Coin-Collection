@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**
- * Das ist die Hauptklasse, welche das Frame für das Programm beinhaltet
+ * Das ist die Hauptklasse, welche das Frame f&uumlr das Programm beinhaltet
  *
  * @author jaypi4c
  *

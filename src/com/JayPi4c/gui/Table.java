@@ -22,12 +22,12 @@ public class Table extends JTable {
 	private int year;
 
 	public Table(String rowData[][], String columnNames[], int year) {
-		// super(a, b); a und b müssen gleich groß sein!
+		// super(a, b); a und b m&uumlssen gleich gro&szlig sein!
 		super(rowData, columnNames);
 		this.year = year;
 
 		// https://www.tutorials.de/threads/jtable-zelle-gezielt-einfaerben.195978/
-		// Quelle des Codes für das ändern des Hintergrundes einer Zelle
+		// Quelle des Codes f&uumlr das &Aumlndern des Hintergrundes einer Zelle
 		this.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
 
 			private static final long serialVersionUID = 1L;
@@ -64,19 +64,20 @@ public class Table extends JTable {
 					}
 					System.out.println("The coin is " + (holding ? "" : "not ") + "in your possesion!");
 					// JOptionPane.showMessageDialog(null,
-					// "Die Münze ist " + (holding ? "" : "nicht ") + "in deinem Besitz!");
+					// "Die M\u00fcnze ist " + (holding ? "" : "nicht ") + "in deinem Besitz!");
 
 					int dialogButton = JOptionPane.showConfirmDialog(null,
-							"Die Münze befindet sich " + (holding ? "" : "nicht ") + "in Ihrem Besitz!" + Util.n
-									+ "Soll die Münze " + (holding ? "entfernt " : "hinzugefügt ") + "werden?" + Util.n
-									+ "Land: " + land + "; Wert: " + val + "; Jahr: " + year,
-							"Münze " + (holding ? "entfernen" : "hinzufügen") + "?", JOptionPane.YES_NO_OPTION);
+							"Die M\u00fcnze befindet sich " + (holding ? "" : "nicht ") + "in Ihrem Besitz!" + Util.n
+									+ "Soll die M\u00fcnze " + (holding ? "entfernt " : "hinzugef\u00fcgt ") + "werden?"
+									+ Util.n + "Land: " + land + "; Wert: " + val + "; Jahr: " + year,
+							"M\u00fcnze " + (holding ? "entfernen" : "hinzuf\u00fcgen") + "?",
+							JOptionPane.YES_NO_OPTION);
 					if (dialogButton == JOptionPane.YES_OPTION) {
 						try {
 							Util.updateRegistry(land, value, year, !holding);
 							JOptionPane.showMessageDialog(null, "Erfolgreich!");
 
-							// "Die Münze ist " + (holding ? "" : "nicht ") + "in deinem Besitz!");
+							// "Die M\u00fcnze ist " + (holding ? "" : "nicht ") + "in deinem Besitz!");
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
@@ -140,9 +141,9 @@ public class Table extends JTable {
 			return 0.20;
 		case "50ct":
 			return 0.50;
-		case "1€":
+		case "1\u20AC":
 			return 1;
-		case "2€":
+		case "2\u20AC":
 			return 2;
 		default:
 			return 42;

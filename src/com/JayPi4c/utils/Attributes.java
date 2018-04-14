@@ -2,8 +2,8 @@ package com.JayPi4c.utils;
 
 /**
  * Die Attributes Klasse speichert alle wichtigen Informationen in statischen
- * Variablen und l�sst diese �ber die jeweiligen Getter- und Settermethoden
- * erreichen.
+ * Variablen und l&aumlsst diese &uumlber die jeweiligen Getter- und
+ * Settermethoden erreichen.
  * 
  * @author JayPi4c
  * @version 1.0.0
@@ -13,7 +13,8 @@ public class Attributes {
 	private static String[] Years = { "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008",
 			"2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017" };
 	private static String[] Values = { "0.01", "0.02", "0.05", "0.1", "0.2", "0.5", "1", "2" };
-	private static String[] Perfectures = { "A; Berlin", "D; München", "F; Stuttgart", "G; Karlsruhe", "J; Hamburg" };
+	private static String[] Perfectures = { "A; Berlin", "D; M\u00fcnchen", "F; Stuttgart", "G; Karlsruhe",
+			"J; Hamburg" };
 	private static boolean firstStart;
 	private static int countries;
 	private static int specialCoinages;
@@ -43,7 +44,7 @@ public class Attributes {
 	 * 
 	 * 
 	 * @param index
-	 *            setzt den Index des Namens des Landes, welcher ge�ndert werden
+	 *            setzt den Index des Namens des Landes, welcher ge&aumlndert werden
 	 *            soll.
 	 * @param text
 	 *            der String, der den Namen des Landes beinhaltet.
@@ -56,7 +57,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return Gibt das Stringarray der CountryNames zur�ck.
+	 * @return Gibt das Stringarray der CountryNames zur&uumlck.
 	 * @since 1.0.0
 	 */
 	public static String[] getCountryNames() {
@@ -64,12 +65,12 @@ public class Attributes {
 	}
 
 	/**
-	 * Diese Funktion gibt den Namen, der zu dem CountryKey gehört zurück.
+	 * Diese Funktion gibt den Namen, der zu dem CountryKey geh&oumlrt zur&uumlck.
 	 * 
 	 * @param index
-	 *            CountryKey, der zu dem Namen gehört.
-	 * @return gibt den Namen an der Stelle des Arrays zurück (Der Name, der zum
-	 *         CountryKey gehört)
+	 *            CountryKey, der zu dem Namen geh&oumlrt.
+	 * @return gibt den Namen an der Stelle des Arrays zur&uumlck (Der Name, der zum
+	 *         CountryKey geh&oumlrt)
 	 * @since 1.0.0
 	 */
 	public static String getCounryName(int index) {
@@ -79,7 +80,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param years
-	 *            ein Stringarray, welches alle Jahre der �ra � besitzt.
+	 *            ein Stringarray, welches alle Jahre der &Aumlra &euro besitzt.
 	 * @since 1.0.0
 	 */
 
@@ -89,8 +90,8 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return Gibt das Stringarray zur�ck, welches als einzelne Elemente die Jahre
-	 *         der �-�ra beinhaltet.
+	 * @return Gibt das Stringarray zur&uumlck, welches als einzelne Elemente die
+	 *         Jahre der &Aumlra beinhaltet.
 	 * @since 1.0.0
 	 */
 	public static String[] getYears() {
@@ -100,7 +101,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param vals
-	 *            nimmt ein Stringarray entgegen, welches die 8 Werte der M�nzen
+	 *            nimmt ein Stringarray entgegen, welches die 8 Werte der M&uumlnzen
 	 *            beinhalten.
 	 * @since 1.0.0
 	 */
@@ -110,8 +111,8 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt das Stringarray zur�ck, welche als Elemente die 8 Werte der
-	 *         �-M�nzen hat.
+	 * @return gibt das Stringarray zur&uumlck, welche als Elemente die 8 Werte der
+	 *         &euro-M&uumlnzen hat.
 	 * @since 1.0.0
 	 */
 	public static String[] getValues() {
@@ -119,13 +120,13 @@ public class Attributes {
 	}
 
 	/**
-	 * Deutschland ist das einzige Land, welches mehrere Pr�gest�tte besitzt. Um
-	 * diese Informationen verarbeiten zu k�nnen m�ssen die Pr�gst�tten bekannt
-	 * sein.
+	 * Deutschland ist das einzige Land, welches mehrere Pr&aumlgest&aumltte
+	 * besitzt. Um diese Informationen verarbeiten zu k&oumlnnen m&uumlssen die
+	 * Pr&aumlgst&aumltten bekannt sein.
 	 * 
 	 * @param perfects
 	 *            ist ein Stringarry, welches die verschiedenen deutschen
-	 *            Pr�gest�tten beinhaltet.
+	 *            Pr&aumlgest&aumltten beinhaltet.
 	 * @since 1.0.0
 	 */
 	public static void setPerfectures(String[] perfects) {
@@ -134,7 +135,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Pr�gest�tten in eine Stringarray zur�ck.
+	 * @return gibt die Pr&aumlgest&aumltten in eine Stringarray zur&uumlck.
 	 * @since 1.0.0
 	 */
 	public static String[] getPerfectures() {
@@ -153,7 +154,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt zur�ck, ob das Programm das erste Mal gestartet wird, oder
+	 * @return gibt zur&uumlck, ob das Programm das erste Mal gestartet wird, oder
 	 *         nicht.
 	 * @since 1.0.0
 	 */
@@ -164,7 +165,8 @@ public class Attributes {
 	/**
 	 * 
 	 * @param c
-	 *            setzt die Anzahl aller L�nder, die sich aktuell im � befinden.
+	 *            setzt die Anzahl aller L&aumlnder, die sich aktuell im &euro
+	 *            befinden.
 	 * @since 1.0.0
 	 */
 	public static void setCountries(int c) {
@@ -173,7 +175,8 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der L�nder zur�ck, die sich aktuell im � befinden.
+	 * @return gibt die Anzahl der L&aumlnder zur&uumlck, die sich aktuell im &euro
+	 *         befinden.
 	 * @since 1.0.0
 	 */
 	public static int getCountries() {
@@ -183,7 +186,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param specialCoins
-	 *            Anzahl der Gedenkm�nzen (Sonderm�nzen)
+	 *            Anzahl der Gedenkm&uumlnzen (Sonderm&uumlnzen)
 	 * @since 1.0.0
 	 */
 	public static void setSpecialCoinages(int specialCoins) {
@@ -192,7 +195,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der Gedenkm�nzen (Sonderm�nzen) zur�ck.
+	 * @return gibt die Anzahl der Gedenkm&uumlnzen (Sonderm&uumlnzen) zur&uumlck.
 	 * @since 1.0.0
 	 */
 	public static int getSpecialCoinages() {
@@ -202,7 +205,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param countr
-	 *            setzt die Anzahl der L�nder, die 1999 im � waren.
+	 *            setzt die Anzahl der L&aumlnder, die 1999 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static void setCountries1999(int countr) {
@@ -211,7 +214,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der L�nder zur�ck, die 1999 im � waren.
+	 * @return gibt die Anzahl der L&aumlnder zur&uumlck, die 1999 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static int getCountries1999() {
@@ -221,7 +224,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param countr
-	 *            setzt die Anzahl der L�nder, die 2001 im � waren.
+	 *            setzt die Anzahl der L&aumlnder, die 2001 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static void setCountries2001(int countr) {
@@ -230,7 +233,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der L�nder zur�ck, die 2001 im � waren.
+	 * @return gibt die Anzahl der L&aumlnder zur&uumlck, die 2001 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static int getCountries2001() {
@@ -240,7 +243,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param countr
-	 *            setzt die Anzahl der L�nder, die 2007 im � waren.
+	 *            setzt die Anzahl der L&aumlnder, die 2007 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static void setCountries2007(int countr) {
@@ -249,7 +252,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der L�nder zur�ck, die 2007 im � waren.
+	 * @return gibt die Anzahl der L&aumlnder zur&uumlck, die 2007 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static int getCountries2007() {
@@ -259,7 +262,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param countr
-	 *            setzt die Anzahl der L�nder, die 2008 im � waren.
+	 *            setzt die Anzahl der L&aumlnder, die 2008 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static void setCountries2008(int countr) {
@@ -268,7 +271,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der L�nder zur�ck, die 2008 im � waren.
+	 * @return gibt die Anzahl der L&aumlnder zur&uumlck, die 2008 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static int getCountries2008() {
@@ -278,7 +281,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param countr
-	 *            setzt die Anzahl der L�nder, die 2009 im � waren.
+	 *            setzt die Anzahl der L&aumlnder, die 2009 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static void setCountries2009(int countr) {
@@ -287,7 +290,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der L�nder zur�ck, die 2009 im � waren.
+	 * @return gibt die Anzahl der L&aumlnder zur&uumlck, die 2009 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static int getCountries2009() {
@@ -297,7 +300,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param countr
-	 *            setzt die Anzahl der L�nder, die 2011 im � waren.
+	 *            setzt die Anzahl der L&aumlnder, die 2011 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static void setCountries2011(int countr) {
@@ -306,7 +309,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der L�nder zur�ck, die 20011 im � waren.
+	 * @return gibt die Anzahl der L&aumlnder zur&uumlck, die 20011 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static int getCountries2011() {
@@ -316,7 +319,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param countr
-	 *            setzt die Anzahl der L�nder, die 2014 im � waren.
+	 *            setzt die Anzahl der L&aumlnder, die 2014 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static void setCountries2014(int countr) {
@@ -325,7 +328,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der L�nder zur�ck, die 2014 im � waren.
+	 * @return gibt die Anzahl der L&aumlnder zur&uumlck, die 2014 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static int getCountries2014() {
@@ -335,7 +338,7 @@ public class Attributes {
 	/**
 	 * 
 	 * @param countr
-	 *            setzt die Anzahl der L�nder, die 2015 im � waren.
+	 *            setzt die Anzahl der L&aumlnder, die 2015 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static void setCountries2015(int countr) {
@@ -344,7 +347,7 @@ public class Attributes {
 
 	/**
 	 * 
-	 * @return gibt die Anzahl der L�nder zur�ck, die 2015 im � waren.
+	 * @return gibt die Anzahl der L&aumlnder zur&uumlck, die 2015 im &euro waren.
 	 * @since 1.0.0
 	 */
 	public static int getCountries2015() {

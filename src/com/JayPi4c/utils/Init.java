@@ -12,19 +12,19 @@ import java.io.IOException;
  */
 public class Init {
 	/**
-	 * Die statische Funktion begin() überprüft zu Beginn, ob der "data" Ordner
-	 * existiert. Darauf folgend werden alle "Coinages.co" Dateien auf vorhanden
-	 * sein überprüft. Ist eine Datei nicht vorhanden, wird diese generiert. Sollte
-	 * die Datei vorhanden sein, wird die Datei auf Fehler überprüft, die das
-	 * Programm evtl. zum Absturz bringen kann. Verschiedene Fehler sorgen für
-	 * verschiedene Fehlermeldungen:
+	 * Die statische Funktion begin() &uumlberpr&uumlft zu Beginn, ob der "data"
+	 * Ordner existiert. Darauf folgend werden alle "Coinages.co" Dateien auf
+	 * vorhanden sein &uumlberpr&uumlft. Ist eine Datei nicht vorhanden, wird diese
+	 * generiert. Sollte die Datei vorhanden sein, wird die Datei auf Fehler
+	 * &uumlberpr&uumlft, die das Programm evtl. zum Absturz bringen k&oumlnnen.
+	 * Verschiedene Fehler sorgen f&uumlr verschiedene Fehlermeldungen:
 	 * <p>
 	 * <li>Ist die Datei leer, dann wird der Fehlercode 0 ausgegeben
-	 * <li>Enthält eine Zeile nicht 8 Elemente, so wird der Fehlercode 1 ausgegeben.
-	 * Die 8 Elemente stehen für 8 Münzen pro Jahr (1ct, 2ct, 5ct, 10ct, 20ct, 50ct,
-	 * 1€, 2€). Des Weiteren beinhaltet ein Element noch eine Zahl für das Land, den
-	 * CountryKey, und eine Zahl, die wiederspiegelt, ob das Element im Besitz des
-	 * Users ist.
+	 * <li>Enth&aumllt eine Zeile nicht 8 Elemente, so wird der Fehlercode 1
+	 * ausgegeben. Die 8 Elemente stehen für 8 M&uumlnzen pro Jahr (1ct, 2ct, 5ct,
+	 * 10ct, 20ct, 50ct, 1&euro, 2&euro). Des Weiteren beinhaltet ein Element noch
+	 * eine Zahl für das Land, den CountryKey, und eine Zahl, die wiederspiegelt, ob
+	 * das Element im Besitz des Users ist.
 	 * <li>Besteht ein Element nicht aus 3 Teilen, so wir der Fehlercode 2
 	 * ausgegeben.
 	 * <li>Entspricht der CountryKey nicht der Zeile in der Datei, so wird der
@@ -32,12 +32,12 @@ public class Init {
 	 * <p>
 	 * Sollte ein Fehler erkannt werden, so wird die Datei als Fehlerhaft markiert
 	 * und die Datei wird neu generiert, jedoch wird versucht, so viele
-	 * Informationen zu retten, wie es nur möglich ist. Dies geschieht durch die
+	 * Informationen zu retten, wie es nur m&oumlglich ist. Dies geschieht durch die
 	 * {@link com.JayPi4c.utils.Util#rescueData(File file, int year) rescueData}
 	 * Methode aus der Util-Klasse.
 	 * <p>
-	 * Gibt es keine Fehler oder die Daten wurde gerettet, so wird abschließend die
-	 * Information ausgegeben, dass die Datei erreichbar ist.
+	 * Gibt es keine Fehler oder die Daten wurde gerettet, so wird abschlie&szligend
+	 * die Information ausgegeben, dass die Datei erreichbar ist.
 	 * 
 	 * 
 	 * @throws IOException

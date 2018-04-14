@@ -27,8 +27,8 @@ public class FeaturePanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int dialogButton = JOptionPane.showConfirmDialog(null,
-						"Sind Sie sicher, dass sie die gesamte sammlung löschen möchten?", "Sammlung löschen",
-						JOptionPane.YES_NO_OPTION);
+						"Sind Sie sicher, dass sie die gesamte sammlung l\u00F6schen m\u00F6chten?",
+						"Sammlung l\u00F6schen", JOptionPane.YES_NO_OPTION);
 
 				if (dialogButton == JOptionPane.YES_OPTION) {
 					System.out.println("All files are getting deleted!");
@@ -64,7 +64,7 @@ public class FeaturePanel extends JPanel {
 	}
 
 	public void refresh() throws IOException {
-		worth.setText("Der Wert der Sammlung beträgt: " + Util.getWorth() + "€.");
+		worth.setText("Der Wert der Sammlung betr\u00e4gt: " + Util.getWorth() + "\u20AC.");
 	}
 
 }
