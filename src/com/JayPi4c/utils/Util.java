@@ -27,7 +27,7 @@ public class Util {
 	public static final String n = System.getProperty("line.separator");
 
 	/**
-	 * Ein Logger, mit dem schneller Errors gespeichert werden können.
+	 * Ein Logger, mit dem schneller Errors gespeichert werden kï¿½nnen.
 	 * 
 	 * @since 1.1.0
 	 */
@@ -180,7 +180,15 @@ public class Util {
 				int country = i / 8;
 				int valueKey = i % 8;
 				double value = getValueFromMultiplicator(valueKey);
-				fullDataInParts[i] = country + "," + value + "," + 0;
+				// umgeht das .0, wenn 2.0 oder 1.0 in eine Datei eingeschrieben werden muss,
+				// damit die Datei nach dem Reparieren wieder wie im originalen Zustand
+				// aussieht!
+				String part;
+				if (value >= 1)
+					part = "" + (int) (value);
+				else
+					part = "" + value;
+				fullDataInParts[i] = country + "," + part + ",0";
 				System.out.println(fullDataInParts[i] + " was generated!");
 			}
 		}
