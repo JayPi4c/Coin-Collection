@@ -27,7 +27,7 @@ public class Util {
 	public static final String n = System.getProperty("line.separator");
 
 	/**
-	 * Ein Logger, mit dem schneller Errors gespeichert werden k�nnen.
+	 * Ein Logger, mit dem schneller Errors gespeichert werden k&oumlnnen.
 	 * 
 	 * @since 1.1.0
 	 */
