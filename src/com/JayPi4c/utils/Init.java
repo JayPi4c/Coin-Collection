@@ -21,9 +21,9 @@ public class Init {
 	 * <p>
 	 * <li>Ist die Datei leer, dann wird der Fehlercode 0 ausgegeben
 	 * <li>Enth&aumllt eine Zeile nicht 8 Elemente, so wird der Fehlercode 1
-	 * ausgegeben. Die 8 Elemente stehen für 8 M&uumlnzen pro Jahr (1ct, 2ct, 5ct,
+	 * ausgegeben. Die 8 Elemente stehen fï¿½r 8 M&uumlnzen pro Jahr (1ct, 2ct, 5ct,
 	 * 10ct, 20ct, 50ct, 1&euro, 2&euro). Des Weiteren beinhaltet ein Element noch
-	 * eine Zahl für das Land, den CountryKey, und eine Zahl, die wiederspiegelt, ob
+	 * eine Zahl fï¿½r das Land, den CountryKey, und eine Zahl, die wiederspiegelt, ob
 	 * das Element im Besitz des Users ist.
 	 * <li>Besteht ein Element nicht aus 3 Teilen, so wir der Fehlercode 2
 	 * ausgegeben.
