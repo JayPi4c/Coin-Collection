@@ -21,10 +21,10 @@ public class Init {
 	 * <p>
 	 * <li>Ist die Datei leer, dann wird der Fehlercode 0 ausgegeben
 	 * <li>Enth&aumllt eine Zeile nicht 8 Elemente, so wird der Fehlercode 1
-	 * ausgegeben. Die 8 Elemente stehen f�r 8 M&uumlnzen pro Jahr (1ct, 2ct, 5ct,
-	 * 10ct, 20ct, 50ct, 1&euro, 2&euro). Des Weiteren beinhaltet ein Element noch
-	 * eine Zahl f�r das Land, den CountryKey, und eine Zahl, die wiederspiegelt, ob
-	 * das Element im Besitz des Users ist.
+	 * ausgegeben. Die 8 Elemente stehen f&uumlr 8 M&uumlnzen pro Jahr (1ct, 2ct,
+	 * 5ct, 10ct, 20ct, 50ct, 1&euro, 2&euro). Des Weiteren beinhaltet ein Element
+	 * noch eine Zahl f&uumlr das Land, den CountryKey, und eine Zahl, die
+	 * wiederspiegelt, ob das Element im Besitz des Users ist.
 	 * <li>Besteht ein Element nicht aus 3 Teilen, so wir der Fehlercode 2
 	 * ausgegeben.
 	 * <li>Entspricht der CountryKey nicht der Zeile in der Datei, so wird der
@@ -97,10 +97,16 @@ public class Init {
 								if (!part[0].equals("" + j)) {
 									// System.out.println("file is damaged!");
 									// System.out.println("Errorcode: 3; Line: " + (j + 1));
-									Util.log.info("file is damaged!");
-									Util.log.info("Errorcode: 3; Line: " + (j + 1));
+									Util.log.info("file is damaged!" + "\n" + "Errorcode: 3; Line: " + (j + 1));
 									damaged = true;
 									break;
+								}
+								double val = Double.parseDouble(part[1]);
+								double target = Util.getValueFromMultiplicator(k);
+								if (val != target) {
+									// System.out.println("Error");
+									Util.log.info("file is damaged!" + "\n" + "Errorcode: 4; Line " + (j + 1)
+											+ "; value:" + "\n" + "\tfound: " + val + "\n" + "\texpected: " + target);
 								}
 							}
 							if (damaged)
