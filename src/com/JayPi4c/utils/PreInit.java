@@ -21,7 +21,8 @@ public class PreInit {
 	 * <p>
 	 * Ist das Laden abgeschlossen, so wird in der Konsole ausgegeben, dass das
 	 * Laden erfolgreich war. Gibt es einen Fehler beim Laden der Datei so wird das
-	 * Programm beendet, da ohnehin weitere Informationen für das Programm fehlen.
+	 * Programm beendet, da ohnehin weitere Informationen f&uumlr das Programm
+	 * fehlen.
 	 * 
 	 * @since 1.0.0
 	 */
