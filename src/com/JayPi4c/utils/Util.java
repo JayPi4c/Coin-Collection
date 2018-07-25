@@ -65,8 +65,7 @@ public class Util {
 	 * Es wird der Pfad zur CoinagesYEAR.co Datei ermittelt und zur&uumlckgegeben,
 	 * der zu dem Parameter passt.
 	 * 
-	 * @param year
-	 *            Das Jahr, welches zur gesuchten Datei geh&oumlrt.
+	 * @param year Das Jahr, welches zur gesuchten Datei geh&oumlrt.
 	 * @return Der Pfad zur CoinagesYEAR.co Datei.
 	 * @since 1.0.0
 	 */
@@ -82,9 +81,8 @@ public class Util {
 	 * Jahren im &euro gab. Diese unterschiedliche Anzahl an L&aumlndern in
 	 * unterschiedlichen Jahren wird schon in der Funktion ber&uumlcksichtigt.
 	 * 
-	 * @param year
-	 *            Das Jahr, f&uumlr welches die CoinagesYEAR.co Datei generiert
-	 *            werden soll.
+	 * @param year Das Jahr, f&uumlr welches die CoinagesYEAR.co Datei generiert
+	 *             werden soll.
 	 * @throws IOException
 	 * @since 1.0.0
 	 */
@@ -122,11 +120,9 @@ public class Util {
 	 * Informationen gef&uumlllt wird, sodass die gesicherten Informationen
 	 * automatisch wieder in die Datei eingepflegt werden k&oumlnnen.
 	 * 
-	 * @param file
-	 *            Die Datei, die &uumlberpr&uumlft und repariert werden soll.
-	 * @param year
-	 *            Das Jahr der Datei, f&uumlr die Anzahl der L&aumlnder in dem Jahr
-	 *            und weiteres.
+	 * @param file Die Datei, die &uumlberpr&uumlft und repariert werden soll.
+	 * @param year Das Jahr der Datei, f&uumlr die Anzahl der L&aumlnder in dem Jahr
+	 *             und weiteres.
 	 * @throws IOException
 	 * @since 1.0.0
 	 */
@@ -222,13 +218,10 @@ public class Util {
 	/**
 	 * Die Funktion gibt den Status einer M&uumlnze zur&uumlck
 	 * 
-	 * @param land
-	 *            Das Land, aus dem die M&uumlnze stammt.
-	 * @param value
-	 *            Der Wert der M&uumlnze (1ct, 2ct, 5ct, 10ct, 20ct, 50ct, 1&euro,
-	 *            2&euro)
-	 * @param year
-	 *            Das Jahr, aus dem die M&uumlnze stammt.
+	 * @param land  Das Land, aus dem die M&uumlnze stammt.
+	 * @param value Der Wert der M&uumlnze (1ct, 2ct, 5ct, 10ct, 20ct, 50ct, 1&euro,
+	 *              2&euro)
+	 * @param year  Das Jahr, aus dem die M&uumlnze stammt.
 	 * @return true, wenn die M&uumlnze im Besitz ist, false, wenn die M&uumlnze
 	 *         nicht im Besitz ist.
 	 * @throws IOException
@@ -263,10 +256,8 @@ public class Util {
 	/**
 	 * Der Key, der zu einem Land geh&oumlrt, die Zeile des Landes
 	 * 
-	 * @param year
-	 *            Das Jahr, f&uumlr das man den key haben will
-	 * @param land
-	 *            Das Land, f&uumlr das man den Key haben will
+	 * @param year Das Jahr, f&uumlr das man den key haben will
+	 * @param land Das Land, f&uumlr das man den Key haben will
 	 * @return gibt den key des Landes zur&uumlck.
 	 * @since 1.0.0
 	 */
@@ -285,9 +276,8 @@ public class Util {
 	/**
 	 * Gibt den Namen, der zu dem countryKey geh&oumlt, zur&uumlck.
 	 * 
-	 * @param countryKey
-	 *            Der countryKey, von dem man den String des Namens haben
-	 *            m&oumlchte.
+	 * @param countryKey Der countryKey, von dem man den String des Namens haben
+	 *                   m&oumlchte.
 	 * @return Der String des Namens, der zu dem countryKey geh&oumlrt.
 	 */
 	public static String getNameByCountryKey(int countryKey) {
