@@ -20,15 +20,14 @@ public class Main {
 	 * PreInit-Klasse, sowie die Init Klasse ausgef&uumlhrt, um die wichtigsten
 	 * Informationen zu speichern. Nachdem die Init-Methoden abgeschlossen sind,
 	 * wird eine neue Instanz der Frame-Klasse erstellt, die jegliche Aufgaben in
-	 * der GUI übernimmt.
+	 * der GUI &uumlbernimmt.
 	 * 
-	 * @param args
-	 *            die Parameter, die &uumlbergeben werden, wenn das Programm
-	 *            &uumlber die Konsole mit weiteren Parameter gestartet werden.
-	 * @throws IOException
-	 *             Da bei jedem Start des Programms Daten aus externen Dateien
-	 *             ausgelesen werden m&uumlssen k&oumlnnen immer Fehler entstehen,
-	 *             wenn zum Beispiel der "data" Ordner nicht in dem directory ist.
+	 * @param args die Parameter, die &uumlbergeben werden, wenn das Programm
+	 *             &uumlber die Konsole mit weiteren Parameter gestartet werden.
+	 * @throws IOException Da bei jedem Start des Programms Daten aus externen
+	 *                     Dateien ausgelesen werden m&uumlssen k&oumlnnen immer
+	 *                     Fehler entstehen, wenn zum Beispiel der "data" Ordner
+	 *                     nicht in dem directory ist.
 	 * @since 1.0.0
 	 */
 	public static void main(String args[]) throws IOException {
