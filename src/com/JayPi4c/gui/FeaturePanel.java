@@ -17,6 +17,7 @@ public class FeaturePanel extends JPanel {
 
 	private JButton reset;
 	private JLabel worth;
+	private JButton credits;
 
 	public FeaturePanel() throws IOException {
 		this.setLayout(null);
@@ -57,10 +58,26 @@ public class FeaturePanel extends JPanel {
 		worth.setVisible(true);
 		add(worth);
 
+		credits = new JButton("Credits");
+		credits.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null,
+						"Idee: JayPi4c\n" + "Programmer: JayPi4c\n" + "Design: JayPi4c\n"
+								+ "Inspirationen: Wolfgang Pohl, Martina Pohl, Oliver Pohl, Lukas Tetzlaff",
+						"Credits", JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		credits.setSize(100, 20);
+		credits.setVisible(true);
+		this.add(credits);
+
 	}
 
 	public void relocate(int width, int height) {
 		reset.setLocation(width - 120, height - 80);
+		credits.setLocation(20, height - 80);
 	}
 
 	public void refresh() throws IOException {
