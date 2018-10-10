@@ -15,14 +15,31 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 import com.JayPi4c.utils.Util;
 
+/**
+ * Diese Klasse erm&oumlglicht die Tabellen, welche in rot oder gr&uumln
+ * anzeigen, ob die M&uumlnze im Besitz ist oder nicht.
+ * 
+ * @see javax.swing.JTable
+ * @author JayPi4c
+ *
+ */
 public class Table extends JTable {
 
 	private static final long serialVersionUID = -8959754359475426474L;
 
 	private int year;
 
+	/**
+	 * Der Konstruktor der Tableklasse. Es ist wichtig, dass rowData[0].length ==
+	 * columnNames.length()
+	 * 
+	 * @param rowData     Ein String-Array, das f&uumlr jede Zeile und Spalte einen
+	 *                    Text bereith&aumllt, der in der Tabelle angezeigt wird.
+	 * @param columnNames Alle Namen der L&aumlnder, die in dem Jahr im &euro;
+	 *                    waren.
+	 * @param year        Das Jahr, f&uumlr welches die Tabelle erstellt wird.
+	 */
 	public Table(String rowData[][], String columnNames[], int year) {
-		// super(a, b); a und b m&uumlssen gleich gro&szlig sein!
 		super(rowData, columnNames);
 		this.year = year;
 
