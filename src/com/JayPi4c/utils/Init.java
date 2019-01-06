@@ -2,6 +2,7 @@ package com.JayPi4c.utils;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -40,10 +41,9 @@ public class Init {
 	 * die Information ausgegeben, dass die Datei erreichbar ist.
 	 * 
 	 * 
-	 * @throws IOException
 	 * @since 1.0.0
 	 */
-	public static void begin() throws IOException {
+	public static void begin() {
 		File dataDir = new File(Util.getExecutionPath() + "/data");
 		if (!dataDir.exists())
 			dataDir.mkdir();
@@ -55,7 +55,11 @@ public class Init {
 			if (!CoinRegistry.exists()) {
 				// System.out.println("generate: " + CoinRegistry.getAbsolutePath());
 				Util.log.info("generate: " + CoinRegistry.getAbsolutePath());
-				Util.genRegistry(i);
+				try {
+					Util.genRegistry(i);
+				} catch (IOException e) {
+					Util.log.info("Could not generate registry!");
+				}
 			} else {
 				boolean damaged = false;
 
@@ -65,13 +69,26 @@ public class Init {
 					Util.log.info("file is damaged!");
 					Util.log.info("Errocode: 0; File is empty");
 					damaged = true;
-					Util.genRegistry(i);
+					try {
+						Util.genRegistry(i);
+					} catch (IOException e) {
+						Util.log.info("Could not generate registry!");
+					}
 				}
 				if (!damaged) {
-					BufferedReader CR = new BufferedReader(new FileReader(CoinRegistry));
+					BufferedReader CR = null;
+					try {
+						CR = new BufferedReader(new FileReader(CoinRegistry));
+					} catch (FileNotFoundException e) {
+						Util.log.info("Could not find registry file");
+					}
 					String[] lines = new String[Util.getMembersFromYear(i)];
 					for (int j = 0; j < Util.getMembersFromYear(i); j++) {
-						lines[j] = CR.readLine();
+						try {
+							lines[j] = CR.readLine();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
 
 						String[] str = lines[j].split(";");
 						if (str.length != 8) {
@@ -114,9 +131,17 @@ public class Init {
 						}
 					}
 
-					CR.close();
+					try {
+						CR.close();
+					} catch (IOException e) {
+						Util.log.info("Error on closing the reader!");
+					}
 					if (damaged)
-						Util.rescueData(CoinRegistry, i);
+						try {
+							Util.rescueData(CoinRegistry, i);
+						} catch (IOException e) {
+							Util.log.info("Could not rescue data!");
+						}
 				}
 			}
 			// System.out.println("'coinages" + i + ".co' is accessible");

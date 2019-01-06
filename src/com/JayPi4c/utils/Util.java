@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 /**
  * 
  * @author JayPi4c
- * @version 1.1.0
+ * @version 1.1.1
  */
 public class Util {
 	/**
@@ -37,14 +37,17 @@ public class Util {
 	 * Um auch nach dem Programmstart Informationen und Fehler erkennen zu
 	 * k&oumlnnen werden diese Informationen auch in einer log.txt gespeichert.
 	 * Dieser wird in dieser Funktion initialisert.
-	 * 
-	 * @throws IOException
+	 *
 	 * @since 1.1.0
 	 */
-	public static void initializeLogger() throws IOException {
+	public static void initializeLogger() {
 		log.info("Starting up...");
-		FileHandler handler = new FileHandler("log.txt");
-		log.addHandler(handler);
+		try {
+			FileHandler handler = new FileHandler("log.txt");
+			log.addHandler(handler);
+		} catch (IOException e) {
+			log.info("Logger initialization failed");
+		}
 	}
 
 	/**
