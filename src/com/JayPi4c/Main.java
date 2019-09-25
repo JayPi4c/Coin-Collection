@@ -2,7 +2,6 @@ package com.JayPi4c;
 
 import com.JayPi4c.gui.Frame;
 import com.JayPi4c.utils.Init;
-import com.JayPi4c.utils.PreInit;
 import com.JayPi4c.utils.Util;
 
 /**
@@ -27,7 +26,7 @@ public class Main {
 	 */
 	public static void main(String args[]) {
 		Util.initializeLogger();
-		PreInit.begin();
+		Util.loadProperties();
 		Init.begin();
 		Util.log.info("Initialization successfully!");
 		new Frame("CoinCollectionRefactored");

@@ -8,7 +8,6 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.JayPi4c.utils.Attributes;
 import com.JayPi4c.utils.Util;
 
 public class SelectionPanel extends JPanel {
@@ -28,7 +27,7 @@ public class SelectionPanel extends JPanel {
 		this.setLayout(null);
 		this.setBounds(20, 20, 150, 110);
 
-		ValueBox = new JComboBox<String>(Attributes.getValues());
+		ValueBox = new JComboBox<String>(Util.getValues());
 		ValueBox.setBounds(0, 0, 150, 20);
 		ValueBox.setSelectedIndex(7);
 		ValueBox.setVisible(true);
@@ -45,7 +44,7 @@ public class SelectionPanel extends JPanel {
 		});
 		add(ValueBox);
 
-		YearBox = new JComboBox<String>(Attributes.getYears());
+		YearBox = new JComboBox<String>(Util.getYears());
 		YearBox.setBounds(0, 30, 150, 20);
 		YearBox.setSelectedIndex(4);
 		YearBox.setVisible(true);
@@ -62,7 +61,7 @@ public class SelectionPanel extends JPanel {
 		});
 		add(YearBox);
 
-		CountryBox = new JComboBox<String>(Attributes.getCountryNames());
+		CountryBox = new JComboBox<String>(Util.getCountryNames());
 		CountryBox.setBounds(0, 60, 150, 20);
 		CountryBox.setSelectedIndex(1);
 		CountryBox.setVisible(true);
@@ -84,7 +83,7 @@ public class SelectionPanel extends JPanel {
 		});
 		add(CountryBox);
 
-		GermanPerfecture = new JComboBox<String>(Attributes.getPerfectures());
+		GermanPerfecture = new JComboBox<String>(Util.getPerfectures());
 		GermanPerfecture.setBounds(0, 90, 150, 20);
 		GermanPerfecture.setSelectedIndex(1);
 		GermanPerfecture.setVisible(true);

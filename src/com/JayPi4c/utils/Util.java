@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.DecimalFormat;
+import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
@@ -33,6 +35,25 @@ public class Util {
 	 */
 	public static final Logger log = Logger.getLogger(Util.class.getName());
 
+	private static final String[] YEARS = { "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007",
+			"2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017" };
+
+	public static String[] getYears() {
+		return YEARS;
+	}
+
+	private static final String[] VALUES = { "0.01", "0.02", "0.05", "0.1", "0.2", "0.5", "1", "2" };
+	private static final String[] PERFECTURES = { "A; Berlin", "D; M\u00fcnchen", "F; Stuttgart", "G; Karlsruhe",
+			"J; Hamburg" };
+
+	public static String[] getValues() {
+		return VALUES;
+	};
+
+	public static final String[] getPerfectures() {
+		return PERFECTURES;
+	}
+
 	/**
 	 * Um auch nach dem Programmstart Informationen und Fehler erkennen zu
 	 * k&oumlnnen werden diese Informationen auch in einer log.txt gespeichert.
@@ -48,6 +69,51 @@ public class Util {
 		} catch (IOException e) {
 			log.info("Logger initialization failed");
 		}
+	}
+
+	private static Properties properties = null;
+
+	/**
+	 * Die statische Funktion loadProperties() l&aumldt alle Informationen aus der
+	 * config.properties Datei in die statische Variable
+	 * {@link com.JayPi4c.utils.Util#properties}. Mit
+	 * {@link com.JayPi4c.utils.Util#getProperties()} können dann die Werte erreicht
+	 * werden.
+	 * <p>
+	 * Ist das Laden abgeschlossen, so wird in der Konsole ausgegeben, dass das
+	 * Laden erfolgreich war. Gibt es einen Fehler beim Laden der Datei so wird das
+	 * Programm beendet, da ohnehin weitere Informationen f&uumlr das Programm
+	 * fehlen.
+	 * 
+	 * @since 1.0.0
+	 */
+	public static void loadProperties() {
+
+		try {
+			properties = new Properties();
+			properties.load(
+					new InputStreamReader(Util.class.getResourceAsStream("/com/JayPi4c/resource/config.properties")));
+			System.out.println(properties.containsKey("coutries1999"));
+			Util.log.info("load 'config.properties': Successfully");
+
+		} catch (Exception ex) {
+			// System.out.println("load 'properties.prop': failed");
+			// System.out.println("Error log: " + ex);
+			// System.out.println("Exiting ...");
+			Util.log.info("load 'config.properties': failed");
+			Util.log.info("Error log: " + ex);
+			Util.log.info("Exiting...");
+			System.exit(0);
+		}
+	}
+
+	public static Properties getProperties() {
+		return properties;
+	}
+
+	public static String[] getCountryNames() {
+		String propNames = (String) properties.get("countryNames");
+		return propNames.split(",");
 	}
 
 	/**
@@ -266,7 +332,7 @@ public class Util {
 	 */
 	public static int countryKey(int year, String land) {
 		int key = 42;
-		String countryNames[] = Attributes.getCountryNames();
+		String countryNames[] = getCountryNames();
 		for (int i = 0; i < getMembersFromYear(year); i++) {
 			if (countryNames[i].equals(land)) {
 				key = i;
@@ -284,7 +350,7 @@ public class Util {
 	 * @return Der String des Namens, der zu dem countryKey geh&oumlrt.
 	 */
 	public static String getNameByCountryKey(int countryKey) {
-		return Attributes.getCounryName(countryKey);
+		return getCountryNames()[countryKey];
 	}
 
 	public static void updateRegistry(String land, double value, int year, boolean holding) throws IOException {
@@ -417,21 +483,21 @@ public class Util {
 	public static int getMembersFromYear(int year) {
 		int members;
 		if (year < 2001)
-			members = Attributes.getCountries1999();
+			members = Integer.parseInt((String) properties.get("countries1999"));
 		else if (year < 2007)
-			members = Attributes.getCountries2001();
+			members = Integer.parseInt((String) properties.get("countries2001"));
 		else if (year < 2008)
-			members = Attributes.getCountries2007();
+			members = Integer.parseInt((String) properties.get("countries2007"));
 		else if (year < 2009)
-			members = Attributes.getCountries2008();
+			members = Integer.parseInt((String) properties.get("countries2008"));
 		else if (year < 2011)
-			members = Attributes.getCountries2009();
+			members = Integer.parseInt((String) properties.get("countries2009"));
 		else if (year < 2014)
-			members = Attributes.getCountries2011();
+			members = Integer.parseInt((String) properties.get("countries2011"));
 		else if (year < 2015)
-			members = Attributes.getCountries2014();
+			members = Integer.parseInt((String) properties.get("countries2014"));
 		else
-			members = Attributes.getCountries2015();
+			members = Integer.parseInt((String) properties.get("countries2015"));
 
 		return members;
 	}
