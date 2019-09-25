@@ -79,7 +79,7 @@ public class Table extends JTable {
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
-					System.out.println("The coin is " + (holding ? "" : "not ") + "in your possesion!");
+					Util.log.info("The coin is " + (holding ? "" : "not ") + "in your possesion!");
 					// JOptionPane.showMessageDialog(null,
 					// "Die M\u00fcnze ist " + (holding ? "" : "nicht ") + "in deinem Besitz!");
 
