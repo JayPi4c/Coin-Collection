@@ -32,15 +32,15 @@ public class FeaturePanel extends JPanel {
 						"Sammlung l\u00F6schen", JOptionPane.YES_NO_OPTION);
 
 				if (dialogButton == JOptionPane.YES_OPTION) {
-					System.out.println("All files are getting deleted!");
+					Util.log.info("All files are getting deleted!");
 					try {
 						Util.resetCollection();
-						System.out.println("reset is done!");
+						Util.log.info("reset is done!");
 					} catch (IOException ex) {
 						ex.printStackTrace();
 					}
 				} else
-					System.out.println("Nothing will happen");
+					Util.log.info("Nothing will happen");
 				try {
 					refresh();
 				} catch (IOException e1) {

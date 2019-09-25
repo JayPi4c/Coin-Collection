@@ -93,7 +93,6 @@ public class Util {
 			properties = new Properties();
 			properties.load(
 					new InputStreamReader(Util.class.getResourceAsStream("/com/JayPi4c/resource/config.properties")));
-			System.out.println(properties.containsKey("coutries1999"));
 			Util.log.info("load 'config.properties': Successfully");
 
 		} catch (Exception ex) {
@@ -163,7 +162,7 @@ public class Util {
 
 		// looped durch jedes Land, das in dem Jahr den Euro hatte
 		for (int i = 0; i < getMembersFromYear(year); i++) {
-			System.out.println("write in line " + (i + 1));
+			Util.log.info("write in line " + (i + 1));
 			for (int j = 0; j < 2; j++) {
 				int k = (int) Math.pow(10, j);
 				CoinBW.write(i + "," + 0.01 * k + ",0;");
@@ -175,7 +174,7 @@ public class Util {
 			CoinBW.write(n);
 		}
 		CoinBW.close();
-		System.out.println("generating successfully!");
+		Util.log.info("generating successfully!");
 	}
 
 	/**
@@ -254,7 +253,7 @@ public class Util {
 				else
 					part = "" + value;
 				fullDataInParts[i] = country + "," + part + ",0";
-				System.out.println(fullDataInParts[i] + " was generated!");
+				Util.log.info(fullDataInParts[i] + " was generated!");
 			}
 		}
 
@@ -272,7 +271,7 @@ public class Util {
 		}
 		BW.close();
 
-		System.out.println("rescued data: successfully");
+		Util.log.info("rescued data: successfully");
 
 		/*
 		 * for(int i = 0; i < TextLine.length; i++){ String[] contentLine =
@@ -527,7 +526,7 @@ public class Util {
 	public static void resetCollection() throws IOException {
 
 		File f = new File(getExecutionPath() + "/data");
-		System.out.println(f.getAbsolutePath());
+		Util.log.info(f.getAbsolutePath());
 
 		for (String s : f.list())
 			new File(f.getPath(), s).delete();

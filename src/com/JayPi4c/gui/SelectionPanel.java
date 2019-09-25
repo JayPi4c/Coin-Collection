@@ -101,17 +101,17 @@ public class SelectionPanel extends JPanel {
 		String Year = (String) YearBox.getSelectedItem();
 		String Value = (String) ValueBox.getSelectedItem();
 		if (Util.getMembersFromYear(Integer.parseInt(Year)) < CountryBox.getSelectedIndex()) {
-			System.out.println(Country + "+" + Year + "+" + Value + " do not match!");
+			Util.log.info(Country + "+" + Year + "+" + Value + " do not match!");
 			label.setText("That's not possible at all!");
 			ap.setAdd(false);
 			ap.setRemove(false);
 		} else if (Util.getStatus(Country, Double.parseDouble(Value), Integer.parseInt(Year))) {
-			System.out.println("Coin is in possesion!");
+			Util.log.info("Coin is in possesion!");
 			label.setText("Coin is in your possesion");
 			ap.setRemove(true);
 			ap.setAdd(false);
 		} else {
-			System.out.println("Coin is not in possesion!");
+			Util.log.info("Coin is not in possesion!");
 			label.setText("Coin is not in your possesion!");
 			ap.setRemove(false);
 			ap.setAdd(true);
