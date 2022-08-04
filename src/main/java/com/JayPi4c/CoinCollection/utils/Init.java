@@ -1,4 +1,4 @@
-package com.JayPi4c.utils;
+package com.JayPi4c.CoinCollection.utils;
 
 import java.io.BufferedReader;
 import java.io.File;

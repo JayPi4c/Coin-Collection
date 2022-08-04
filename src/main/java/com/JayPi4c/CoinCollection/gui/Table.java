@@ -1,4 +1,4 @@
-package com.JayPi4c.gui;
+package com.JayPi4c.CoinCollection.gui;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
-import com.JayPi4c.utils.Util;
+import com.JayPi4c.CoinCollection.utils.Util;
 
 /**
  * Diese Klasse erm&oumlglicht die Tabellen, welche in rot oder gr&uumln

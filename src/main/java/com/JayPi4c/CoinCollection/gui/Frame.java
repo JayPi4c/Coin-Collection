@@ -1,4 +1,4 @@
-package com.JayPi4c.gui;
+package com.JayPi4c.CoinCollection.gui;
 
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-import com.JayPi4c.utils.Util;
+import com.JayPi4c.CoinCollection.utils.Util;
 
 /**
  * Das ist die Hauptklasse, welche das Frame f&uumlr das Programm beinhaltet

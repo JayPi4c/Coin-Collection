@@ -1,9 +1,9 @@
-package com.JayPi4c.gui;
+package com.JayPi4c.CoinCollection.gui;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 
-import com.JayPi4c.utils.Util;
+import com.JayPi4c.CoinCollection.utils.Util;
 
 public class TableTabbedPane extends JTabbedPane {
 

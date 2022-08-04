@@ -1,4 +1,4 @@
-package com.JayPi4c.gui;
+package com.JayPi4c.CoinCollection.gui;
 
 import java.io.IOException;
 

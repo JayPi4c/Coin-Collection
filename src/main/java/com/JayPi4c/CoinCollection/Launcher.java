@@ -1,16 +1,16 @@
-package com.JayPi4c;
+package com.JayPi4c.CoinCollection;
 
-import com.JayPi4c.gui.Frame;
-import com.JayPi4c.utils.Init;
-import com.JayPi4c.utils.Util;
+import com.JayPi4c.CoinCollection.gui.Frame;
+import com.JayPi4c.CoinCollection.utils.Init;
+import com.JayPi4c.CoinCollection.utils.Util;
 
 /**
  * 
  * @author JayPi4c
- * @version 1.0.1
+ * @version 2.0.0
  *
  */
-public class Main {
+public class Launcher {
 
 	/**
 	 * Die main-Methode wird bei jedem Programmstart ausgef&uumlhrt. Es wird die

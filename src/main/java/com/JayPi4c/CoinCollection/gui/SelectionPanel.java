@@ -1,4 +1,4 @@
-package com.JayPi4c.gui;
+package com.JayPi4c.CoinCollection.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +8,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.JayPi4c.utils.Util;
+import com.JayPi4c.CoinCollection.utils.Util;
 
 public class SelectionPanel extends JPanel {
 

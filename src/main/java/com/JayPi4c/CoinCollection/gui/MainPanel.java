@@ -1,4 +1,4 @@
-package com.JayPi4c.gui;
+package com.JayPi4c.CoinCollection.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
