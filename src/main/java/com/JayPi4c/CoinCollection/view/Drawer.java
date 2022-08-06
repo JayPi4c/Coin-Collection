@@ -12,9 +12,10 @@ import javafx.scene.layout.VBox;
 
 public class Drawer extends JFXDrawer {
 
-	StackPane drawerPane;
+	private StackPane drawerPane;
 
 	public Drawer(StackPane container, ContentPane... contentPanes) {
+		super();
 		List<JFXButton> buttons = new ArrayList<>();
 		for (ContentPane contentPane : contentPanes) {
 			contentPane.getDrawerButton().addEventHandler(MouseEvent.MOUSE_PRESSED,

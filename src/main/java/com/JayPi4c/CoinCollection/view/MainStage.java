@@ -1,5 +1,7 @@
 package com.JayPi4c.CoinCollection.view;
 
+import static com.JayPi4c.CoinCollection.utils.I18nUtils.createBinding;
+
 import com.JayPi4c.CoinCollection.controller.HeaderController;
 import com.JayPi4c.CoinCollection.controller.SnackbarController;
 import com.jfoenix.controls.JFXDrawersStack;
@@ -28,22 +30,22 @@ public class MainStage extends Stage {
 	private static final int MIN_WIDTH = 640;
 	private static final int MIN_HEIGHT = 360;
 	// controllers
-	HeaderController headerController;
+	private HeaderController headerController;
 
 	// UI
-	StackPane container;
-	HeaderPane headerPane;
-	FooterPane footerPane;
+	private StackPane container;
+	private HeaderPane headerPane;
+	private FooterPane footerPane;
 
-	Drawer drawer;
+	private Drawer drawer;
 
-	JFXDrawersStack drawersStack;
+	private JFXDrawersStack drawersStack;
 
-	MainPane mainPane;
-	ActionPane actionPane;
-	SettingsPane settingsPane;
+	private MainPane mainPane;
+	private ActionPane actionPane;
+	private SettingsPane settingsPane;
 
-	JFXSnackbar snackbar;
+	private JFXSnackbar snackbar;
 
 	static {
 		log.debug("Loading images");
@@ -52,6 +54,7 @@ public class MainStage extends Stage {
 
 	public MainStage() {
 		getIcons().add(icon);
+		titleProperty().bind(createBinding("collection.main.title"));
 
 		container = new StackPane();
 		mainPane = new MainPane();

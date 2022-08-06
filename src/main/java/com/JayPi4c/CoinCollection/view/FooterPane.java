@@ -2,15 +2,11 @@ package com.JayPi4c.CoinCollection.view;
 
 import static com.JayPi4c.CoinCollection.utils.I18nUtils.createBinding;
 
-import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
+import javafx.scene.layout.StackPane;
 
-public class FooterPane extends Pane {
+public class FooterPane extends StackPane {
 
 	private Label informationLabel;
 
@@ -18,7 +14,10 @@ public class FooterPane extends Pane {
 		informationLabel = new Label();
 		informationLabel.textProperty().bind(createBinding("footer.text"));
 		getChildren().add(informationLabel);
-		setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+		setAlignment(informationLabel, Pos.CENTER);
+
+		// setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY,
+		// Insets.EMPTY)));
 	}
 
 }

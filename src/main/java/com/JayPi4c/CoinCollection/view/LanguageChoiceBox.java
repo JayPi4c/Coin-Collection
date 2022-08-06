@@ -2,6 +2,7 @@ package com.JayPi4c.CoinCollection.view;
 
 import java.util.Locale;
 
+import com.JayPi4c.CoinCollection.controller.SnackbarController;
 import com.JayPi4c.CoinCollection.utils.I18nUtils;
 
 import javafx.collections.FXCollections;
@@ -25,8 +26,10 @@ public class LanguageChoiceBox extends ChoiceBox<LanguageChoiceBox.LanguageEntry
 		selectID(I18nUtils.getLocale());
 
 		I18nUtils.bundleProperty().addListener((observable, oldValue, newValue) -> {
-			if (newValue != null)
+			if (newValue != null) {
 				selectID(newValue.getLocale());
+				SnackbarController.getInstance().showMessage(I18nUtils.i18n("settings.language.changed.snackbar"));
+			}
 		});
 
 		setOnAction(e -> I18nUtils.setLocale(getValue().locale()));
