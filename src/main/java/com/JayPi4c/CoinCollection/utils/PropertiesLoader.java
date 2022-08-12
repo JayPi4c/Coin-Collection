@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
-import java.util.Locale;
 import java.util.Properties;
 
 import lombok.SneakyThrows;
@@ -27,6 +26,7 @@ public class PropertiesLoader {
 	private final Properties properties;
 
 	private static final String FILE = "collection.properties";
+	private static final String DEFAULT_CONFIG_FILE = "/config.properties";
 	private static final String COMMENTS = "properties for the coin collection program";
 
 	private static PropertiesLoader propertiesLoader;
@@ -39,7 +39,8 @@ public class PropertiesLoader {
 		try (InputStream in = new FileInputStream(getPropertiesFile())) {
 			properties.load(in);
 		} catch (Exception e) {
-			log.error("Error while loading properties. First start is highly likely. ", e);
+			log.error("Error while loading properties. First start is highly likely: {} ", e.getMessage());
+			log.debug("Stackrace: {}", e);
 			loadDefaultProperties();
 		}
 	}
@@ -57,11 +58,15 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * loading th default values for the properties. This method will be called, if
+	 * Loading the default values for the properties. This method will be called, if
 	 * the properties file does not exist.
 	 */
 	private void loadDefaultProperties() {
-		properties.put("lang", Locale.UK.toString());
+		try (InputStream in = PropertiesLoader.class.getResourceAsStream(DEFAULT_CONFIG_FILE)) {
+			properties.load(in);
+		} catch (Exception e) {
+			log.error("Error while loading default properties. ", e);
+		}
 	}
 
 	/**

@@ -1,5 +1,6 @@
 package com.JayPi4c.CoinCollection;
 
+import com.JayPi4c.CoinCollection.service.CoinService;
 import com.JayPi4c.CoinCollection.utils.I18nUtils;
 import com.JayPi4c.CoinCollection.utils.PropertiesLoader;
 import com.JayPi4c.CoinCollection.view.MainStage;
@@ -23,6 +24,9 @@ public class App extends Application {
 	@Override
 	public void init() throws Exception {
 		super.init();
+
+		CoinService.sanitize();
+
 		I18nUtils.setLocale(PropertiesLoader.getInstance().getProperty("lang"));
 		log.info("Initialization successful!");
 	}
