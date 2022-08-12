@@ -1,4 +1,4 @@
-package com.JayPi4c.CoinCollection.view;
+package com.JayPi4c.CoinCollection.view.panes;
 
 import com.jfoenix.controls.JFXButton;
 

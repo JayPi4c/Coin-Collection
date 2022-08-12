@@ -3,6 +3,7 @@ package com.JayPi4c.CoinCollection.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.JayPi4c.CoinCollection.view.panes.ContentPane;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
 

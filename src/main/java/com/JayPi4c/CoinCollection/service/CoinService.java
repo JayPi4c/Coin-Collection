@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class CoinService {
 
 	public static Coin getCoin(int year, double value, String country) {
-		return getCoinById(createID(year, value, country));
+		return getCoinById(Coin.createID(year, value, country));
 	}
 
 	public static Coin getCoinById(String id) {
@@ -42,6 +42,14 @@ public class CoinService {
 		try (Session session = HibernateUtils.getSessionFactory().openSession()) {
 			session.beginTransaction();
 			session.persist(coin);
+			session.getTransaction().commit();
+		}
+	}
+
+	public static void update(Coin coin) {
+		try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+			session.beginTransaction();
+			session.merge(coin);
 			session.getTransaction().commit();
 		}
 	}
@@ -70,15 +78,9 @@ public class CoinService {
 		for (int year = beginningYear; year < currentYear; year++) {
 			for (double val : values) {
 				for (String country : countries) {
-					String id = createID(year, val, country);
-					if (coins.stream().filter(coin -> coin.getId().equals(id)).count() == 0) {
-						Coin c = new Coin();
-						c.setId(id);
-						c.setValue(val);
-						c.setCountry(country);
-						c.setManufacturingYear(year);
-						newCoins.add(c);
-					}
+					String id = Coin.createID(year, val, country);
+					if (coins.stream().filter(coin -> coin.getId().equals(id)).count() == 0)
+						newCoins.add(new Coin(year, val, country));
 				}
 			}
 		}
@@ -92,10 +94,6 @@ public class CoinService {
 			}
 			session.getTransaction().commit();
 		}
-	}
-
-	public static String createID(int year, double value, String country) {
-		return Integer.toString(year) + Double.toString(value) + country;
 	}
 
 }

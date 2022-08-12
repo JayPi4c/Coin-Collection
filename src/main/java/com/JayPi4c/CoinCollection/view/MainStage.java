@@ -2,8 +2,13 @@ package com.JayPi4c.CoinCollection.view;
 
 import static com.JayPi4c.CoinCollection.utils.I18nUtils.createBinding;
 
+import com.JayPi4c.CoinCollection.controller.ActionController;
 import com.JayPi4c.CoinCollection.controller.HeaderController;
 import com.JayPi4c.CoinCollection.controller.SnackbarController;
+import com.JayPi4c.CoinCollection.view.panes.ActionPane;
+import com.JayPi4c.CoinCollection.view.panes.MainPane;
+import com.JayPi4c.CoinCollection.view.panes.SettingsPane;
+import com.JayPi4c.CoinCollection.view.panes.TablePane;
 import com.jfoenix.controls.JFXDrawersStack;
 import com.jfoenix.controls.JFXSnackbar;
 
@@ -31,6 +36,7 @@ public class MainStage extends Stage {
 	private static final int MIN_HEIGHT = 360;
 	// controllers
 	private HeaderController headerController;
+	private ActionController actionController;
 
 	// UI
 	private StackPane container;
@@ -44,6 +50,7 @@ public class MainStage extends Stage {
 	private MainPane mainPane;
 	private ActionPane actionPane;
 	private SettingsPane settingsPane;
+	private TablePane tablePane;
 
 	private JFXSnackbar snackbar;
 
@@ -60,6 +67,7 @@ public class MainStage extends Stage {
 		mainPane = new MainPane();
 		actionPane = new ActionPane();
 		settingsPane = new SettingsPane();
+		tablePane = new TablePane();
 
 		container.getChildren().add(mainPane);
 		VBox.setVgrow(container, Priority.ALWAYS);
@@ -72,12 +80,13 @@ public class MainStage extends Stage {
 
 		SnackbarController.getInstance().init(vBox);
 
-		drawer = new Drawer(container, mainPane, actionPane, settingsPane);
+		drawer = new Drawer(container, mainPane, actionPane, tablePane, settingsPane);
 
 		drawersStack = new JFXDrawersStack();
 		drawersStack.setContent(vBox);
 
 		headerController = new HeaderController(headerPane, drawer, drawersStack);
+		actionController = new ActionController(actionPane);
 
 		Scene scene = new Scene(drawersStack);
 		setScene(scene);
